@@ -7,18 +7,18 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#6656FF",
+    "light": "#A09EFF",
+    "dark": "#6656FF",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#6656FF",
+      "to": "#A09EFF"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:info@personal.ai"
     }
   ],
   "topbarCtaButton": {
@@ -39,13 +39,13 @@
     },
     {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "icon": "Personal AI",
+      "url": "https://community.personal.ai"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://www.personal.ai/blog"
     }
   ],
   "navigation": [
