@@ -1,0 +1,238 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Personal.ai Memory API",
+    "description": "The Memory API enables you to create your memories programmatically. Supports text memories, with future support for voice and visual memories.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.personal.ai/v1"
+    }
+  ],
+  "security": [
+    {
+      "apiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/upload-text": {
+      "post": {
+        "description": "Upload a Document to your Memory",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TextUploadRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Document accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/upload-file": {
+      "post": {
+        "description": "Upload a File to your Memory",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The file to be uploaded"
+                  },
+                  "message_request": {
+                    "$ref": "#/components/schemas/FileMessageRequest"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "File accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/upload-url": {
+      "post": {
+        "description": "Upload a URL to your Memory",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UrlUploadRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "URL accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TextUploadRequest": {
+        "type": "object",
+        "required": ["Text"],
+        "properties": {
+          "Text": {
+            "type": "string",
+            "description": "Body of text to upload to the memory. This should be as clean as possible."
+          },
+          "Title": {
+            "type": "string",
+            "description": "Title of the uploaded document"
+          },
+          "StartTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp string indicating start time - utc"
+          },
+          "EndTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp string indicating end time - utc"
+          },
+          "DomainName": {
+            "type": "string",
+            "description": "Domain name of AI Persona to upload to - ex: justintan-work.personal.ai / justintan-work is the domain name"
+          },
+          "Tags": {
+            "type": "string",
+            "description": "Comma delimited list of tags for context and reference"
+          },
+          "is_stack": {
+            "type": "boolean",
+            "default": true,
+            "description": "Boolean to specify whether to add the document to memory. If set to false, upload will show up as draft in Documents."
+          }
+        }
+      },
+      "FileMessageRequest": {
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string",
+            "description": "Title of the uploaded document"
+          },
+          "StartTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp string indicating start time - utc"
+          },
+          "EndTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp string indicating end time - utc"
+          },
+          "DomainName": {
+            "type": "string",
+            "description": "Domain name of AI Persona to upload to"
+          },
+          "Tags": {
+            "type": "string",
+            "description": "Comma delimited list of tags for context and reference"
+          },
+          "is_stack": {
+            "type": "boolean",
+            "default": true,
+            "description": "Boolean to specify whether to add the document to memory"
+          }
+        }
+      },
+      "UrlUploadRequest": {
+        "type": "object",
+        "required": ["Url"],
+        "properties": {
+          "Url": {
+            "type": "string",
+            "description": "Url to upload (includes public Youtube Urls, Linkedin Profiles, News articles, blogs, etc)"
+          },
+          "Title": {
+            "type": "string",
+            "description": "Title of the uploaded document"
+          },
+          "StartTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp string indicating start time - utc"
+          },
+          "EndTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp string indicating end time - utc"
+          },
+          "DomainName": {
+            "type": "string",
+            "description": "Domain name of AI Persona to upload to"
+          },
+          "Tags": {
+            "type": "string",
+            "description": "Comma delimited list of tags for context and reference"
+          },
+          "is_stack": {
+            "type": "boolean",
+            "default": true,
+            "description": "Boolean to specify whether to add the document to memory"
+          }
+        }
+      },
+      "SuccessResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Success message"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key",
+        "description": "Unique API key per user (in App under Settings)"
+      }
+    }
+  }
+}
