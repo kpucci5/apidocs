@@ -1,0 +1,59 @@
+---
+title: 'Upload Document'
+openapi: 'POST /upload-text'
+---
+
+Upload a Document to your Memory. Text documents are processed and will surface on your memory stack timeline.
+
+### Body
+
+<ParamField body="Text" type="string" required>
+  Body of text to upload to the memory. This should be as clean as possible.
+</ParamField>
+
+<ParamField body="Title" type="string">
+  Title of the uploaded document
+</ParamField>
+
+<ParamField body="StartTime" type="string">
+  ISO timestamp string indicating start time - utc
+  Example: "2023-07-09T10:00:00.000Z"
+</ParamField>
+
+<ParamField body="EndTime" type="string">
+  ISO timestamp string indicating end time - utc
+  Example: "2023-07-09T10:00:00.000Z"
+</ParamField>
+
+<ParamField body="DomainName" type="string">
+  Domain name of AI Persona to upload to
+  Example: "justintan-work"
+</ParamField>
+
+<ParamField body="Tags" type="string">
+  Comma delimited list of tags for context and reference
+  Example: "new york,san francisco"
+</ParamField>
+
+<ParamField body="is_stack" type="boolean" default="true">
+  Boolean to specify whether to add the document to memory. If set to false, upload will show up as draft in Documents.
+</ParamField>
+
+### Response
+
+<ResponseField name="message" type="string">
+  Confirmation message that document is accepted and processing
+</ResponseField>
+
+<RequestExample>
+```bash
+curl --location 'https://api.personal.ai/v1/upload-text' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{user_api_key}}' \
+--data '{
+    "Text": "This is a long document that is consumed into the document view.",
+    "Title": "Personal AI",
+    "Tags": "#doc1",
+    "DomainName": "ai",
+    "is_stack": false
+}'
