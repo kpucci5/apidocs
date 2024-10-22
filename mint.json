@@ -80,7 +80,7 @@
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete",
-        "api-reference/endpoint/AI_Memory"
+        "api-reference/endpoint/AI_Memory",
         "api-reference/endpoint/upload-text"
       ]
     }
