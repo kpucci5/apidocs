@@ -1,0 +1,11 @@
+curl --location 'https://api.personal.ai/v1/memory' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{user_api_key}}' \
+--data '{
+    "Text": "my cat is born in #2000",
+    "RawFeedText": "My <b>cat</b> is born in <b>2000</b>",
+    "DomainName": "ai-climbing",
+    "CreatedTime": "Wed, 19 Sep 2023 13:31:00 PDT",
+    "SourceName": "Twitter",
+    "Tags": "pet,cat,meow two"
+}'
