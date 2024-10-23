@@ -1,80 +1,94 @@
 ---
 title: 'Upload File'
-description: 'Upload a File to your Memory'
 api: 'POST https://api.personal.ai/v1/upload-file'
+description: 'Upload a file to your memory'
 ---
 
-Upload a file to your Memory. The request should be sent as `multipart/form-data`.
+## Upload File
 
-### Headers
+API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 
-<ParamField header="x-api-key" type="string" required>
-  Your unique API key (found in App under Settings)
-</ParamField>
+### Body
 
-### Form Parameters
-
-<ParamField body="file" type="file" required>
+<ParamField body="file" type="File" required>
   The file to be uploaded
 </ParamField>
 
-<ParamField body="message_request" type="string" required>
+<ParamField body="message_request" type="JSON" required>
   A JSON-encoded string containing additional request parameters
-  ```json Example
-  {
-    "DomainName": "ai",
-    "Title": "Uploaded Files",
-    "Tags": "document,file",
-    "is_stack": true
-  }
-  ```
 </ParamField>
 
-### Message Request Parameters
+```json Example message_request
+{
+  "DomainName": "ai",
+  "Title": "Uploaded Files", 
+  "Tags": "document,file",
+  "is_stack": true
+}
+```
 
-<ParamField body="Title" type="string">
+### Parameters
+
+<ResponseField name="Title" type="string" optional>
   Title of the uploaded document
+</ResponseField>
+
+<ResponseField name="DomainName" type="string" optional>
+  Domain name of AI Persona to upload to (e.g., "justintan-work" from justintan-work.personal.ai)
+</ResponseField>
+
+<ResponseField name="StartTime" type="string" optional>
+  ISO timestamp string indicating start time (UTC). Defaults to current time.
+  Example: "2023-07-09T10:00:00.000Z"
+</ResponseField>
+
+<ResponseField name="EndTime" type="string" optional>
+  ISO timestamp string indicating end time (UTC). Defaults to current time.
+  Example: "2023-07-09T10:00:00.000Z"
+</ResponseField>
+
+<ResponseField name="Tags" type="string" optional>
+  Comma delimited list of tags for context and reference
+</ResponseField>
+
+<ResponseField name="is_stack" type="boolean" optional>
+  Boolean to specify whether to add the document to memory. If false, upload shows up as draft in Documents.
+  Defaults to true.
+</ResponseField>
+
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to multipart/form-data
 </ParamField>
 
-<ParamField body="StartTime" type="string">
-  ISO timestamp string indicating start time - utc
-</ParamField>
-
-<ParamField body="EndTime" type="string">
-  ISO timestamp string indicating end time - utc
-</ParamField>
-
-<ParamField body="DomainName" type="string">
-  Domain name of AI Persona to upload to
-</ParamField>
-
-<ParamField body="Tags" type="string">
-  Comma delimited list of tags
-</ParamField>
-
-<ParamField body="is_stack" type="boolean">
-  Whether to add the document to memory. Defaults to true.
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
 </ParamField>
 
 ### Response
 
 <ResponseField name="message" type="string">
-  Confirmation message of file processing
+  Success or error message
 </ResponseField>
 
-<RequestExample>
-```bash cURL
-curl --location 'https://api.personal.ai/v1/upload-file' \
---header 'x-api-key: {{user-api-key}}' \
---form 'message_request="{\"DomainName\": \"ai\", \"Title\": \"Uploaded Files\"}"' \
---form 'file=@"/path/to/your/file.pdf"'
-```
-</RequestExample>
-
-<ResponseExample>
-```json Response
+```json Example Success Response
 {
-    "message": "file accepted and processing"
+  "message": "file accepted and processing"
 }
 ```
-</ResponseExample>
+
+```json Example Error Response
+{
+  "detail": "AI memory api unauthorized."
+}
+```
+
+### Usage
+
+```bash cURL
+curl --location 'https://api.personal.ai/v1/upload-file' \
+--header 'x-api-key: <your-api-key>' \
+--form 'file=@"/path/to/file.pdf"' \
+--form 'message_request="{\"DomainName\": \"ai\", \"Title\": \"Uploaded Files\"}"'
+```
