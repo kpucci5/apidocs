@@ -41,10 +41,12 @@
   ],
   "navigation": [
     {
+      "tab": "Home",
       "group": "Overview",
       "pages": ["home/index"]
     },
     {
+      "tab": "Documentation",
       "group": "Get Started",
       "pages": [
         "introduction",
@@ -53,6 +55,7 @@
       ]
     },
     {
+      "tab": "Documentation",
       "group": "Essentials",
       "pages": [
         "essentials/markdown",
@@ -64,12 +67,14 @@
       ]
     },
     {
+      "tab": "API Reference",
       "group": "API Documentation",
       "pages": [
         "api-reference/introduction"
       ]
     },
     {
+      "tab": "API Reference",
       "group": "Message APIs",
       "pages": [
         "api-reference/endpoint/ai-conversation",
@@ -78,6 +83,7 @@
       ]
     },
     {
+      "tab": "API Reference",
       "group": "Memory APIs",
       "pages": [
         "api-reference/upload/upload-document",
