@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "https://lis-profile-images-prod.s3-us-west-2.amazonaws.com/SFVV7LV23KC9W5RK9KIHJM7IBMVA7W.jpg",
+    "light": "https://lis-profile-images-prod.s3-us-west-2.amazonaws.com/SFVV7LV23KC9W5RK9KIHJM7IBMVA7W.jpg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "https://lis-profile-images-prod.s3-us-west-2.amazonaws.com/SFVV7LV23KC9W5RK9KIHJM7IBMVA7W.jpg",
   "colors": {
     "primary": "#6656FF",
     "light": "#A09EFF",
