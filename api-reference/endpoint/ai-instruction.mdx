@@ -1,0 +1,98 @@
+---
+title: 'Instruction API'
+description: 'Send instructions to your AI'
+api: 'POST https://api.personal.ai/v1/instruction'
+---
+
+Send specific instructions to your AI with additional command parameters.
+
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  The type of content being sent. Must be `application/json`
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your unique API key (found in App under Settings)
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="cmd" type="string">
+  Command type for the instruction
+  ```json Example
+  "chatgpt"
+  ```
+</ParamField>
+
+### Body Parameters
+
+<ParamField body="Text" type="string" required>
+  Instruction to send to your AI
+  ```json Example
+  "who is Einstein"
+  ```
+</ParamField>
+
+<ParamField body="UserName" type="string">
+  Name of the user sending the request
+  ```json Example
+  "Leila"
+  ```
+</ParamField>
+
+<ParamField body="SourceName" type="string">
+  Source application name
+  ```json Example
+  "slack"
+  ```
+</ParamField>
+
+<ParamField body="SessionId" type="string">
+  Session identifier for conversation continuity
+  ```json Example
+  "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
+  ```
+</ParamField>
+
+<ParamField body="is_message" type="boolean">
+  Flag to treat the instruction as a message
+  ```json Example
+  true
+  ```
+</ParamField>
+
+### Response
+
+<ResponseField name="ai_message" type="string">
+  The AI's response to the instruction
+</ResponseField>
+
+<ResponseField name="ai_score" type="number">
+  Confidence score of the AI response
+</ResponseField>
+
+<RequestExample>
+```bash cURL
+curl --location 'https://api.personal.ai/v1/instruction?cmd=chatgpt' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: user-api' \
+--data '{
+    "Text": "who is Einstein",
+    "UserName": "Leila",
+    "SourceName": "slack",
+    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
+    "is_message": true
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "ai_message": "Einstein was a renowned physicist who developed the theory of relativity...",
+    "ai_score": 95.5,
+    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
+}
+```
+</ResponseExample>
