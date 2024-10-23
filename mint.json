@@ -31,7 +31,7 @@
       "url": "api-reference"
     }
   ],
-  "navigation": [
+   "navigation": [
     {
       "group": "Get Started",
       "pages": [
@@ -49,33 +49,26 @@
         "essentials/navigation",
         "essentials/reusable-snippets"
       ]
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open-cover",
+      "url": "https://mintlify.com/docs"
     },
     {
-      "group": "Links",
-      "pages": [
-        {
-          "group": "External",
-          "icon": "book-open-cover",
-          "pages": [
-            {
-              "name": "Documentation",
-              "url": "https://mintlify.com/docs",
-              "icon": "book-open-cover"
-            },
-            {
-              "name": "Community",
-              "url": "https://community.personal.ai",
-              "icon": "slack"
-            },
-            {
-              "name": "Blog",
-              "url": "https://personal.ai/blog",
-              "icon": "newspaper"
-            }
-          ]
-        }
-      ]
+      "name": "Community",
+      "icon": "slack",
+      "url": "https://community.personal.ai"
     },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://personal.ai/blog"
+    }
+  ],
+  "navigation": [
     {
       "group": "API Documentation",
       "pages": [
