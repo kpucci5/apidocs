@@ -68,6 +68,14 @@
         "api-reference/endpoint/upload-file",
         "api-reference/endpoint/upload-url"
       ]
+    },
+        {
+      "group": "Upload APIs",
+      "pages": [
+        "api-reference/upload/upload-document",
+        "api-reference/upload/upload-file",
+        "api-reference/upload/upload-url"
+      ]
     }
   ],
   "anchors": [
