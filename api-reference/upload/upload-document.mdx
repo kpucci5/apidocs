@@ -1,3 +1,101 @@
 ---
-openapi: post /upload-text
+title: 'Upload Document'
+api: 'POST https://api.personal.ai/v1/upload-text'
+description: 'Upload a text document to your memory'
 ---
+
+## Upload Document
+
+API endpoint for uploading text documents to your memory. This allows you to add longer form content directly to your AI's knowledge base.
+
+### Body
+
+<ParamField body="Text" type="string" required>
+  Body of text to upload to the memory. This should be as clean as possible.
+</ParamField>
+
+<ParamField body="Title" type="string" optional>
+  Title of the uploaded document
+</ParamField>
+
+<ParamField body="DomainName" type="string" optional>
+  Domain name of AI Persona to upload to
+</ParamField>
+
+<ParamField body="StartTime" type="string" optional>
+  ISO timestamp string indicating start time (UTC)
+</ParamField>
+
+<ParamField body="EndTime" type="string" optional>
+  ISO timestamp string indicating end time (UTC)
+</ParamField>
+
+<ParamField body="Tags" type="string" optional>
+  Comma delimited list of tags for context and reference
+</ParamField>
+
+<ParamField body="is_stack" type="boolean" optional>
+  Boolean to specify whether to add the document to memory. Defaults to true.
+</ParamField>
+
+```json Example
+{
+    "Text": "This is a long document that is consumed into the document view.",
+    "Title": "Personal AI",
+    "DomainName": "ai",
+    "Tags": "#doc1",
+    "is_stack": false,
+    "StartTime": "2023-07-09T10:00:00.000Z",
+    "EndTime": "2023-07-09T10:00:00.000Z"
+}
+```
+
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+### Response
+
+<ResponseField name="message" type="string">
+  Success or error message
+</ResponseField>
+
+```json Example Success Response
+{
+    "message": "doc accepted and processing"
+}
+```
+
+```json Example Error Response
+{
+    "detail": "AI document upload unauthorized."
+}
+```
+
+### Usage
+
+```bash cURL
+curl --location 'https://api.personal.ai/v1/upload-text' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <your-api-key>' \
+--data '{
+    "Text": "This is a long document that is consumed into the document view.",
+    "Title": "Personal AI",
+    "DomainName": "ai",
+    "Tags": "#doc1",
+    "is_stack": false
+}'
+```
+
+### Error Codes
+
+| Code | Description |
+| --- | --- |
+| 503 | Authorization Failure - API key is invalid |
+| 400 | Invalid Request - Missing required fields or invalid format |
