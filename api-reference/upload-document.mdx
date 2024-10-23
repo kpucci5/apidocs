@@ -1,0 +1,36 @@
+---
+title: "Upload File Document"
+sidebarTitle: "Upload File"
+description: "Upload files to your Personal AI memory stack"
+---
+
+The Upload File endpoint enables you to add various file types to your memory. Supports multiple file formats that will be processed and added to your memory stack.
+
+### Body Parameters
+
+<ParamField body="file" type="file" required>
+  The file to be uploaded
+</ParamField>
+
+<ParamField body="message_request" type="json" required>
+  JSON string containing additional parameters:
+  - Title (string)
+  - StartTime (string, ISO timestamp)
+  - EndTime (string, ISO timestamp)
+  - DomainName (string)
+  - Tags (string)
+  - is_stack (boolean)
+</ParamField>
+
+### Response
+
+<ResponseField name="message" type="string">
+  Confirmation message that file is accepted and processing
+</ResponseField>
+
+<RequestExample>
+```bash
+curl --location 'https://api.personal.ai/v1/upload-file' \
+--header 'x-api-key: {{user-api-key}}' \
+--form 'message_request="{\"DomainName\": \"ai\", \"Title\": \"Uploaded Files\"}"' \
+--form 'file=@"/path/to/file.pdf"'
