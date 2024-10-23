@@ -36,36 +36,55 @@ API endpoint for interacting with your AI through messages. This endpoint allows
 
 <ParamField body="DomainName" type="string" optional>
   The domain part of the AI profile url
+  ```json Example
+  "DomainName": "ai"
+  ```
 </ParamField>
 
 <ParamField body="UserName" type="string" optional>
   Name of the user sending the request
+  ```json Example
+  "UserName": "Leila"
+  ```
 </ParamField>
 
 <ParamField body="SessionId" type="string" optional>
   Use the same sessionId to continue conversation on that session
+  ```json Example
+  "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
+  ```
 </ParamField>
 
 <ParamField body="SourceName" type="string" optional>
   Name of the source app of the inbound message, required if using with triggers
+  ```json Example
+  "SourceName": "slack"
+  ```
 </ParamField>
 
 <ParamField body="is_stack" type="boolean" optional>
   Flag to also add the user message (Text) to memory. Defaults to false.
+  ```json Example
+  "is_stack": true
+  ```
 </ParamField>
 
 <ParamField body="is_draft" type="boolean" optional>
   Flag to create a copilot message for the AI. Defaults to false.
+  ```json Example
+  "is_draft": true
+  ```
 </ParamField>
 
 ```json Example
 {
     "Text": "who is Mafan",
-    "UserName": "Leila",
-    "SourceName": "slack",
     "DomainName": "ai",
-    "is_draft": true,
+    "UserName": "Leila",
     "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
+    "SourceName": "slack",
+    "is_draft": true,
+    "is_stack": true,
     "Metadata": {
         "key": "value"
     }
