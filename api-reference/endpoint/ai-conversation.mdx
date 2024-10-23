@@ -8,6 +8,16 @@ description: 'Retrieve conversation history from a channel'
 
 API endpoint for retrieving conversation history from a channel or session. This endpoint allows you to access previous interactions with your AI.
 
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
 ### Body
 
 <ParamField body="DomainName" type="string" optional>
@@ -24,16 +34,6 @@ API endpoint for retrieving conversation history from a channel or session. This
   "DomainName": "labs"
 }
 ```
-
-### Headers
-
-<ParamField header="Content-Type" type="string" required>
-  Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
-</ParamField>
 
 ### Response
 
