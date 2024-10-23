@@ -75,6 +75,8 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
 ```
 </ParamField>
 
+### Example Request
+
 ```json Example
 {
     "Text": "who is Einstein",
@@ -87,7 +89,7 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
 }
 ```
 
-### Example Responses
+### Example Response
 
 <ResponseField name="ai_message" type="string">
   The AI's response to the instruction
@@ -104,12 +106,6 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
     "ai_name": "AI Name",
     "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
     "source_app": "api"
-}
-```
-
-```json Example Error Response
-{
-    "detail": "AI instruction api unauthorized."
 }
 ```
 
@@ -134,3 +130,9 @@ curl --location 'https://api.personal.ai/v1/instruction?cmd=chatgpt' \
 | --- | --- |
 | 503 | Authorization Failure - API key is invalid |
 | 503 | Processing Failure - Instruction could not be processed |
+
+```json Example Error Response
+{
+    "detail": "AI instruction api unauthorized."
+}
+```
