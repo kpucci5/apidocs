@@ -23,18 +23,16 @@ API endpoint for retrieving conversation history from a channel or session. This
 <ParamField body="DomainName" type="string" optional>
   The domain part of the AI profile url
 ```json Example Request
-"SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b"
+"DomainName": "labs"
 ```
 </ParamField>
 
 <ParamField body="SessionId" type="string" optional>
   Session identifier to retrieve specific conversation history
 ```json Example Request
-"DomainName": "labs"
+"SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b"
 ```
 </ParamField>
-
----
 
 ### Example Responses
 
@@ -74,12 +72,6 @@ API endpoint for retrieving conversation history from a channel or session. This
 ]
 ```
 
-```json Example Error Response
-{
-    "detail": "AI conversation api unauthorized."
-}
-```
-
 ### Exmaple cURL
 
 ```bash cURL
@@ -98,3 +90,8 @@ curl --location 'https://api.personal.ai/v1/conversation' \
 | --- | --- |
 | 503 | Authorization Failure - API key is invalid |
 | 404 | Not Found - Conversation or session not found |
+```json Example Error Response
+{
+    "detail": "AI conversation api unauthorized."
+}
+```
