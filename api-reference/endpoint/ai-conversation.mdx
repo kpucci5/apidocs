@@ -22,24 +22,32 @@ API endpoint for retrieving conversation history from a channel or session. This
 
 <ParamField body="DomainName" type="string" optional>
   The domain part of the AI profile url
+```json Example Request
+"SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b"
+```
 </ParamField>
 
 <ParamField body="SessionId" type="string" optional>
   Session identifier to retrieve specific conversation history
+```json Example Request
+"DomainName": "labs"
+```
 </ParamField>
 
-```json Example
-{
-  "SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b",
-  "DomainName": "labs"
-}
-```
+---
 
 ### Example Responses
 
 <ResponseField name="array" type="array">
   Array of conversation messages, including both user messages and AI responses
 </ResponseField>
+
+```json Example Request
+{
+  "SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b",
+  "DomainName": "labs"
+}
+```
 
 ```json Example Success Response
 [
