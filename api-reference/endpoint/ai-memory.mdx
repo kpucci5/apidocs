@@ -1,3 +1,121 @@
 ---
-openapi: post /memory
+title: 'Memory API'
+description: 'Upload text memories to your memory stack'
+api: 'POST https://api.personal.ai/v1/memory'
 ---
+
+The Memory API enables you to create text memories programmatically in your memory stack.
+
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  The type of content being sent. Must be `application/json`
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your unique API key (found in App under Settings)
+</ParamField>
+
+### Body Parameters
+
+<ParamField body="Text" type="string" required>
+  Plain text memories to upload to your stack
+  ```json Example
+  "My first memory with Personal AI"
+  ```
+</ParamField>
+
+<ParamField body="CreatedTime" type="string">
+  Time (including timezone) of the memory. Defaults to current time if not specified.
+  ```json Example
+  "Wed, 28 Jul 2021 13:30:00 PDT"
+  ```
+</ParamField>
+
+<ParamField body="SourceName" type="string" required>
+  The source or application of memory to help you recall where it is from
+  ```json Example
+  "Notes"
+  ```
+</ParamField>
+
+<ParamField body="RawFeedText" type="string">
+  The formatted text that can be stored as it is
+  ```json Example
+  "My <b>first</b> memory with Personal AI"
+  ```
+</ParamField>
+
+<ParamField body="DomainName" type="string">
+  The AI persona where the memory will be uploaded. This is the prefix before .personal.ai
+  ```json Example
+  "ai-climbing"
+  ```
+</ParamField>
+
+<ParamField body="Tags" type="string">
+  Comma delimited list of tags for the memory
+  ```json Example
+  "pet,dog,woof woof"
+  ```
+</ParamField>
+
+### Response
+
+<ResponseField name="type" type="string">
+  Type of response (memory)
+</ResponseField>
+
+<ResponseField name="payload" type="array">
+  Array containing the memory data
+</ResponseField>
+
+<RequestExample>
+```bash cURL
+curl --location 'https://api.personal.ai/v1/memory' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{user_api_key}}' \
+--data '{
+    "Text": "my cat is born in #2000",
+    "RawFeedText": "My <b>cat</b> is born in <b>2000</b>",
+    "CreatedTime": "Wed, 19 Sep 2023 13:31:00 PDT",
+    "SourceName": "Twitter",
+    "Tags": "pet,cat,meow two"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "type": "memory",
+    "payload": [
+        {
+            "data": [
+                {
+                    "type": "MEMORY",
+                    "memlevel": "MEMBLOCK",
+                    "memlabel": "my cat is born in #2000",
+                    "start_time_utc": "2023-09-19T20:31:00.000+00:00",
+                    "source": {
+                        "type": "text",
+                        "name": "Twitter"
+                    },
+                    "topics": [
+                        {
+                            "value": "pet"
+                        },
+                        {
+                            "value": "cat"
+                        },
+                        {
+                            "value": "meow two"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+</ResponseExample>
