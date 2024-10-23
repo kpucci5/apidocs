@@ -8,6 +8,16 @@ description: 'Send instructions to your AI for specific actions'
 
 API endpoint for sending specific instructions to your AI. This endpoint allows you to interact with different AI models and execute specific commands.
 
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
 ### Query Parameters
 
 <ParamField query="cmd" type="string" required>
@@ -53,16 +63,6 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
     "is_message": true
 }
 ```
-
-### Headers
-
-<ParamField header="Content-Type" type="string" required>
-  Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
-</ParamField>
 
 ### Response
 
