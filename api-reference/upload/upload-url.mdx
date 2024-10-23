@@ -8,6 +8,16 @@ description: 'Upload content from a URL to your memory'
 
 API endpoint for uploading content from URLs to your memory. Supports various types of content including public Youtube URLs, LinkedIn profiles, news articles, and blogs.
 
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
 ### Body Parameters
 
 <ParamField body="Url" type="string" required>
@@ -49,16 +59,6 @@ API endpoint for uploading content from URLs to your memory. Supports various ty
     "EndTime": "2023-07-09T10:00:00.000Z"
 }
 ```
-
-### Headers
-
-<ParamField header="Content-Type" type="string" required>
-  Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
-</ParamField>
 
 ### Response
 
