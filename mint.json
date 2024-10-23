@@ -36,6 +36,7 @@
       "group": "Get Started",
       "pages": [
         "introduction",
+        "product",
         "development"
       ]
     },
