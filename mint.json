@@ -74,15 +74,22 @@
         "api-reference/introduction"
       ]
     },
+{
+  "name": "Personal.ai API",
+  "navigation": [
     {
-      "group": "Endpoint Examples",
+      "group": "API Reference",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete",
-        "api-reference/endpoint/POST/upload-document"
+        "api-reference/ai-memory",
+        "api-reference/ai-message",
+        "api-reference/upload-document",
+        "api-reference/upload-file",
+        "api-reference/upload-url",
+        "api-reference/ai-conversation"
       ]
     }
+  ]
+}
   ],
   "footerSocials": {
     "x": "https://x.com/mintlify",
