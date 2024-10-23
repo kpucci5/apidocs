@@ -27,12 +27,12 @@
   },
   "tabs": [
     {
-      "name": "Documentation",
-      "url": "documentation"
-    },
-    {
       "name": "Home",
       "url": "home"
+    },
+    {
+      "name": "Documentation",
+      "url": "documentation"
     },
     {
       "name": "API Reference",
