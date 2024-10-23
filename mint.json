@@ -83,7 +83,7 @@
         "api-reference/upload/upload-document",
         "api-reference/upload/upload-file",
         "api-reference/upload/upload-url",
-        "api-reference/endpoint/ai-memory"
+        "api-reference/upload/ai-memory"
       ]
     }
   ],
