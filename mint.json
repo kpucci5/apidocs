@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Personal AI Documentation",
 "logo": {
-  "dark": "/images/dark-logo.svg",
-  "light": "/images/light-logo.svg"
+  "dark": "/logos/dark-logo.svg",
+  "light": "/logos/light-logo.svg"
 },
-"favicon": "/images/favicon.png",
+"favicon": "/favicon.png",
   "colors": {
     "primary": "#6656FF",
     "light": "#A09EFF",
@@ -27,7 +27,7 @@
   },
   "tabs": [
     {
-      "name": "API Documentation",
+      "name": "API Reference",
       "url": "api-reference"
     }
   ],
