@@ -1,69 +1,89 @@
 ---
 title: 'Upload URL'
-description: 'Upload a URL to your Memory'
 api: 'POST https://api.personal.ai/v1/upload-url'
+description: 'Upload content from a URL to your memory'
 ---
 
-Upload content from a URL to your Memory.
+## Upload URL
+
+API endpoint for uploading content from URLs to your memory. Supports various types of content including public Youtube URLs, LinkedIn profiles, news articles, and blogs.
+
+### Body
+
+<ParamField body="Url" type="string" required>
+  URL to upload (includes public Youtube URLs, LinkedIn profiles, news articles, blogs, etc)
+</ParamField>
+
+<ParamField body="Title" type="string" optional>
+  Title of the uploaded content
+</ParamField>
+
+<ParamField body="DomainName" type="string" optional>
+  Domain name of AI Persona to upload to
+</ParamField>
+
+<ParamField body="StartTime" type="string" optional>
+  ISO timestamp string indicating start time (UTC)
+</ParamField>
+
+<ParamField body="EndTime" type="string" optional>
+  ISO timestamp string indicating end time (UTC)
+</ParamField>
+
+<ParamField body="Tags" type="string" optional>
+  Comma delimited list of tags for context and reference
+</ParamField>
+
+<ParamField body="is_stack" type="boolean" optional>
+  Boolean to specify whether to add the content to memory. Defaults to true.
+</ParamField>
+
+```json Example
+{
+    "Url": "https://personal.ai",
+    "Title": "Personal AI",
+    "DomainName": "ai",
+    "Tags": "ai,technology,platform",
+    "is_stack": false,
+    "StartTime": "2023-07-09T10:00:00.000Z",
+    "EndTime": "2023-07-09T10:00:00.000Z"
+}
+```
 
 ### Headers
 
 <ParamField header="Content-Type" type="string" required>
-  The type of content being sent. Must be `application/json`
+  Must be set to application/json
 </ParamField>
 
 <ParamField header="x-api-key" type="string" required>
-  Your unique API key (found in App under Settings)
-</ParamField>
-
-### Body Parameters
-
-<ParamField body="Url" type="string" required>
-  URL to upload. Supports public Youtube URLs, LinkedIn Profiles, News articles, blogs, etc.
-  ```json Example
-  "https://www.linkedin.com/in/kanugantisuman"
-  ```
-</ParamField>
-
-<ParamField body="Title" type="string">
-  Title of the uploaded document
-  ```json Example
-  "Personal AI Profile"
-  ```
-</ParamField>
-
-<ParamField body="DomainName" type="string">
-  Domain name of AI Persona to upload to
-  ```json Example
-  "ai"
-  ```
-</ParamField>
-
-<ParamField body="Tags" type="string">
-  Comma delimited list of tags
-  ```json Example
-  "profile,linkedin"
-  ```
-</ParamField>
-
-<ParamField body="is_stack" type="boolean">
-  Whether to add the document to memory. Defaults to true.
-  ```json Example
-  false
-  ```
+  Your Personal AI API key
 </ParamField>
 
 ### Response
 
 <ResponseField name="message" type="string">
-  Confirmation message of URL processing
+  Success or error message
 </ResponseField>
 
-<RequestExample>
+```json Example Success Response
+{
+    "message": "url accepted and processing"
+}
+```
+
+```json Example Error Response
+{
+    "detail": "AI url upload unauthorized."
+}
+```
+
+### Usage
+
 ```bash cURL
 curl --location 'https://api.personal.ai/v1/upload-url' \
 --header 'Content-Type: application/json' \
---header 'x-api-key: {{user-api-key}}' \
+--header 'x-api-key: <your-api-key>' \
 --data '{
     "Url": "https://personal.ai",
     "Title": "Personal AI",
@@ -71,12 +91,11 @@ curl --location 'https://api.personal.ai/v1/upload-url' \
     "is_stack": false
 }'
 ```
-</RequestExample>
 
-<ResponseExample>
-```json Response
-{
-    "message": "url accepted and processing"
-}
-```
-</ResponseExample>
+### Error Codes
+
+| Code | Description |
+| --- | --- |
+| 503 | Authorization Failure - API key is invalid |
+| 400 | Invalid URL - URL cannot be accessed or is invalid |
+| 422 | Processing Error - Content cannot be extracted from URL |
