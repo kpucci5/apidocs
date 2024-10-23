@@ -1,0 +1,104 @@
+---
+title: 'Conversation API'
+description: 'Retrieve a Conversation from a Channel'
+api: 'POST https://api.personal.ai/v1/conversation'
+---
+
+Retrieve the conversation history for a specific session or channel.
+
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  The type of content being sent. Must be `application/json`
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your unique API key (found in App under Settings)
+</ParamField>
+
+### Body Parameters
+
+<ParamField body="SessionId" type="string" required>
+  The session ID for the conversation you want to retrieve
+  ```json Example
+  "dd3ec564-5948-4da0-8ab6-94b23f92705b"
+  ```
+</ParamField>
+
+<ParamField body="DomainName" type="string">
+  The domain name of the AI persona
+  ```json Example
+  "labs"
+  ```
+</ParamField>
+
+### Response
+
+The response is an array of conversation messages, with each message containing:
+
+<ResponseField name="ai_message" type="string">
+  The message content
+</ResponseField>
+
+<ResponseField name="ai_score" type="number">
+  Confidence score for AI messages
+</ResponseField>
+
+<ResponseField name="ai_name" type="string">
+  Name of the AI or user
+</ResponseField>
+
+<ResponseField name="raw_message" type="string">
+  Original message text
+</ResponseField>
+
+<ResponseField name="timestamp" type="string">
+  UTC timestamp of the message
+</ResponseField>
+
+<ResponseField name="SessionId" type="string">
+  Session identifier
+</ResponseField>
+
+<ResponseField name="Metadata" type="object">
+  Additional message metadata
+</ResponseField>
+
+<RequestExample>
+```bash cURL
+curl --location 'https://api.personal.ai/v1/conversation' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: user-api-key' \
+--data '{
+  "SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b",
+  "DomainName": "labs"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+[
+    {
+        "ai_message": "what is a personal AI",
+        "ai_score": 0.0,
+        "ai_name": "Sharon Zhang",
+        "ai_picture": null,
+        "raw_message": "what is a personal AI",
+        "timestamp": "2024-09-16T03:52:40.821Z",
+        "SessionId": "98bf4dd5-5ab0-4d28-a439-d2f2d18d5443",
+        "Metadata": {}
+    },
+    {
+        "ai_message": "A personal AI is a digital extension of your mind...",
+        "ai_score": 0.0,
+        "ai_name": "Sharon Zhang",
+        "ai_picture": null,
+        "raw_message": "A personal AI is a digital extension of your mind...",
+        "timestamp": "2024-09-16T03:52:40.822Z",
+        "SessionId": "98bf4dd5-5ab0-4d28-a439-d2f2d18d5443",
+        "Metadata": {}
+    }
+]
+```
+</ResponseExample>
