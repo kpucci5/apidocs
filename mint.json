@@ -80,12 +80,12 @@
     {
       "group": "API Reference",
       "pages": [
-        "api-reference/ai-memory",
-        "api-reference/ai-message",
-        "api-reference/upload-document",
-        "api-reference/upload-file",
-        "api-reference/upload-url",
-        "api-reference/ai-conversation"
+        "api-reference/endpoint/ai-memory",
+        "api-reference/endpoint/ai-message",
+        "api-reference/endpoint/upload-document",
+        "api-reference/endpoint/upload-file",
+        "api-reference/endpoint/upload-url",
+        "api-reference/endpoint/ai-conversation"
       ]
     }
   ]
