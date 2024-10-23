@@ -27,6 +27,14 @@
   },
   "tabs": [
     {
+      "name": "Home",
+      "url": "home"
+    },
+    {
+      "name": "Documentation",
+      "url": "documentation"
+    },
+    {
       "name": "API Reference",
       "url": "api-reference"
     }
