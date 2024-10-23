@@ -78,9 +78,10 @@
       "pages": [
         "api-reference/endpoint/ai-conversation",
         "api-reference/endpoint/ai-memory",
-        "api-reference/endpoint/upload-file",
-        "api-reference/endpoint/upload-document",
         "api-reference/endpoint/ai-instruction",
+        "api-reference/endpoint/ai-message",
+        "api-reference/endpoint/upload-document",
+        "api-reference/endpoint/upload-file",
         "api-reference/endpoint/upload-url"
       ]
     }
