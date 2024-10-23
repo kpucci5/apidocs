@@ -1,214 +1,127 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Personal.ai External API",
-    "description": "The Memory API enables you to create your memories programmatically. Currently, we support text memories and in the future voice memories and visual memories. Memory blocks are processed from each API call and will surface on your memory stack timeline.",
+    "title": "OpenAPI Plant Store",
+    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "license": {
+      "name": "MIT"
+    },
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "https://api.personal.ai/v1"
+      "url": "http://sandbox.mintlify.com"
     }
   ],
   "security": [
     {
-      "apiKeyAuth": []
+      "bearerAuth": []
     }
   ],
   "paths": {
-    "/memory": {
-      "post": {
-        "summary": "AI Memory",
-        "description": "Upload text memories to your memory stack.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MemoryRequest"
-              }
+    "/plants": {
+      "get": {
+        "description": "Returns all plants from the system that the user has access to",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to return",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
-            "description": "Memory accepted and processed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Error response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/message": {
-      "post": {
-        "summary": "AI Message",
-        "description": "Interact with AI Message",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MessageRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Message response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Error response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/upload-text": {
-      "post": {
-        "summary": "Upload Document",
-        "description": "Upload a Document to your Memory",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UploadTextRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Document upload success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UploadResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/upload-file": {
-      "post": {
-        "summary": "Upload File",
-        "description": "Upload a File to your Memory",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "file": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "message_request": {
-                    "$ref": "#/components/schemas/FileMessageRequest"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "File upload success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UploadResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/upload-url": {
-      "post": {
-        "summary": "Upload URL",
-        "description": "Upload a URL to your Memory",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UrlUploadRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "URL upload success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UploadResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/conversation": {
-      "post": {
-        "summary": "AI Conversation",
-        "description": "Retrieve a Conversation from a Channel",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConversationRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Conversation response",
+            "description": "Plant response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ConversationResponse"
+                    "$ref": "#/components/schemas/Plant"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new plant in the store",
+        "requestBody": {
+          "description": "Plant to add to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPlant"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "plant response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/plants/{id}": {
+      "delete": {
+        "description": "Deletes a single plant based on the ID supplied",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of plant to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Plant deleted",
+            "content": {}
+          },
+          "400": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -219,229 +132,63 @@
   },
   "components": {
     "schemas": {
-      "MemoryRequest": {
+      "Plant": {
+        "required": [
+          "name"
+        ],
         "type": "object",
-        "required": ["Text"],
         "properties": {
-          "Text": {
-            "type": "string",
-            "description": "Plain text memories to upload to your stack"
+          "name": {
+            "description": "The name of the plant",
+            "type": "string"
           },
-          "RawFeedText": {
-            "type": "string",
-            "description": "The formatted text that can be stored as it is"
-          },
-          "CreatedTime": {
-            "type": "string",
-            "description": "Time (including timezone) of the memory"
-          },
-          "SourceName": {
-            "type": "string",
-            "description": "The source or application of memory"
-          },
-          "Tags": {
-            "type": "string",
-            "description": "Comma delimited list of tags for the memory"
-          },
-          "DomainName": {
-            "type": "string",
-            "description": "The AI persona where the memory will be uploaded"
+          "tag": {
+            "description": "Tag to specify the type",
+            "type": "string"
           }
         }
       },
-      "MessageRequest": {
-        "type": "object",
-        "required": ["Text"],
-        "properties": {
-          "Text": {
-            "type": "string",
-            "description": "Message to send to your AI for a response"
+      "NewPlant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Plant"
           },
-          "Context": {
-            "type": "string",
-            "description": "Message to add additional context to the AI for a response"
-          },
-          "UserName": {
-            "type": "string",
-            "description": "Name of the user sending the request"
-          },
-          "SourceName": {
-            "type": "string",
-            "description": "Name of the source app of the inbound message"
-          },
-          "DomainName": {
-            "type": "string",
-            "description": "The domain part of the AI profile url"
-          },
-          "SessionId": {
-            "type": "string",
-            "description": "Session ID for conversation continuation"
-          },
-          "is_stack": {
-            "type": "boolean",
-            "description": "Flag to also add the user message to memory"
-          },
-          "is_draft": {
-            "type": "boolean",
-            "description": "Flag to create a copilot message for the AI"
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Identification number of the plant",
+                "type": "integer",
+                "format": "int64"
+              }
+            }
           }
-        }
+        ]
       },
-      "UploadTextRequest": {
-        "type": "object",
-        "required": ["Text"],
-        "properties": {
-          "Text": {
-            "type": "string",
-            "description": "Body of text to upload to the memory"
-          },
-          "Title": {
-            "type": "string",
-            "description": "Title of the uploaded document"
-          },
-          "Tags": {
-            "type": "string",
-            "description": "Comma delimited list of tags"
-          },
-          "DomainName": {
-            "type": "string",
-            "description": "Domain name of AI Persona"
-          },
-          "is_stack": {
-            "type": "boolean",
-            "description": "Whether to add the document to memory"
-          }
-        }
-      },
-      "FileMessageRequest": {
+      "Error": {
+        "required": [
+          "error",
+          "message"
+        ],
         "type": "object",
         "properties": {
-          "DomainName": {
-            "type": "string",
-            "description": "Domain name of AI Persona"
+          "error": {
+            "type": "integer",
+            "format": "int32"
           },
-          "Title": {
-            "type": "string",
-            "description": "Title of the uploaded document"
-          },
-          "Tags": {
-            "type": "string",
-            "description": "Comma delimited list of tags"
-          }
-        }
-      },
-      "UrlUploadRequest": {
-        "type": "object",
-        "required": ["Url"],
-        "properties": {
-          "Url": {
-            "type": "string",
-            "description": "URL to upload"
-          },
-          "Title": {
-            "type": "string",
-            "description": "Title of the uploaded document"
-          },
-          "DomainName": {
-            "type": "string",
-            "description": "Domain name of AI Persona"
-          },
-          "is_stack": {
-            "type": "boolean",
-            "description": "Whether to add to memory or save as draft"
-          }
-        }
-      },
-      "ConversationRequest": {
-        "type": "object",
-        "properties": {
-          "SessionId": {
-            "type": "string",
-            "description": "Session ID for the conversation"
-          },
-          "DomainName": {
-            "type": "string",
-            "description": "Domain name of AI Persona"
-          }
-        }
-      },
-      "UploadResponse": {
-        "type": "object",
-        "properties": {
           "message": {
-            "type": "string",
-            "description": "Success message"
-          }
-        }
-      },
-      "ErrorResponse": {
-        "type": "object",
-        "properties": {
-          "detail": {
-            "type": "string",
-            "description": "Error message"
-          }
-        }
-      },
-      "MessageResponse": {
-        "type": "object",
-        "properties": {
-          "ai_message": {
             "type": "string"
-          },
-          "ai_score": {
-            "type": "number"
-          },
-          "ai_name": {
-            "type": "string"
-          },
-          "ai_picture": {
-            "type": "string"
-          },
-          "SessionId": {
-            "type": "string"
-          },
-          "source_app": {
-            "type": "string"
-          }
-        }
-      },
-      "ConversationResponse": {
-        "type": "object",
-        "properties": {
-          "ai_message": {
-            "type": "string"
-          },
-          "ai_score": {
-            "type": "number"
-          },
-          "ai_name": {
-            "type": "string"
-          },
-          "ai_picture": {
-            "type": "string"
-          },
-          "raw_message": {
-            "type": "string"
-          },
-          "timestamp": {
-            "type": "string"
-          },
-          "SessionId": {
-            "type": "string"
-          },
-          "Metadata": {
-            "type": "object"
           }
         }
       }
     },
     "securitySchemes": {
-      "apiKeyAuth": {
-        "type": "apiKey",
-        "in": "header",
-        "name": "x-api-key",
-        "description": "API key for authentication"
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   }
