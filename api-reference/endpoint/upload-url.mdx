@@ -1,59 +1,82 @@
 ---
-title: "Upload URL Content"
-sidebarTitle: "Upload URL"
-description: "Upload web content to your Personal AI memory stack"
+title: 'Upload URL'
+description: 'Upload a URL to your Memory'
+api: 'POST https://api.personal.ai/v1/upload-url'
 ---
 
-The Upload URL endpoint allows you to add web content to your memory. Supports various content types including YouTube videos, LinkedIn profiles, news articles, and blogs.
+Upload content from a URL to your Memory.
+
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  The type of content being sent. Must be `application/json`
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your unique API key (found in App under Settings)
+</ParamField>
 
 ### Body Parameters
 
 <ParamField body="Url" type="string" required>
-  URL to upload (includes public Youtube Urls, LinkedIn Profiles, News articles, blogs, etc)
+  URL to upload. Supports public Youtube URLs, LinkedIn Profiles, News articles, blogs, etc.
+  ```json Example
+  "https://www.linkedin.com/in/kanugantisuman"
+  ```
 </ParamField>
 
 <ParamField body="Title" type="string">
   Title of the uploaded document
-</ParamField>
-
-<ParamField body="StartTime" type="string">
-  ISO timestamp string indicating start time - utc
-  Example: "2023-07-09T10:00:00.000Z"
-</ParamField>
-
-<ParamField body="EndTime" type="string">
-  ISO timestamp string indicating end time - utc
-  Example: "2023-07-09T10:00:00.000Z"
+  ```json Example
+  "Personal AI Profile"
+  ```
 </ParamField>
 
 <ParamField body="DomainName" type="string">
   Domain name of AI Persona to upload to
-  Example: "justintan-work"
+  ```json Example
+  "ai"
+  ```
 </ParamField>
 
 <ParamField body="Tags" type="string">
-  Comma delimited list of tags for context and reference
-  Example: "linkedin,profile"
+  Comma delimited list of tags
+  ```json Example
+  "profile,linkedin"
+  ```
 </ParamField>
 
-<ParamField body="is_stack" type="boolean" default="true">
-  Boolean to specify whether to add the document to memory. If set to false, upload will show up as draft in Documents.
+<ParamField body="is_stack" type="boolean">
+  Whether to add the document to memory. Defaults to true.
+  ```json Example
+  false
+  ```
 </ParamField>
 
 ### Response
 
 <ResponseField name="message" type="string">
-  Confirmation message that URL is accepted and processing
+  Confirmation message of URL processing
 </ResponseField>
 
 <RequestExample>
-```bash
+```bash cURL
 curl --location 'https://api.personal.ai/v1/upload-url' \
 --header 'Content-Type: application/json' \
---header 'x-api-key: {{user_api_key}}' \
+--header 'x-api-key: {{user-api-key}}' \
 --data '{
     "Url": "https://personal.ai",
     "Title": "Personal AI",
     "DomainName": "ai",
     "is_stack": false
 }'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "message": "url accepted and processing"
+}
+```
+</ResponseExample>
