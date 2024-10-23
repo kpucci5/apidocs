@@ -41,7 +41,7 @@
   ],
   "navigation": [
     {
-      "group": "Home",
+      "group": "Overview",
       "pages": ["home/index"]
     },
     {
