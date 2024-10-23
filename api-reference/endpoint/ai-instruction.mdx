@@ -28,38 +28,61 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
 
 <ParamField body="Text" type="string" required>
   Text instruction to send to your AI
+```json Example
+    "Text": "who is Einstein""
+```
 </ParamField>
 
 <ParamField body="Context" type="string" optional>
   Additional context for the instruction
+```json Example
+    "Context": "Respond in 2 sentences or less."
+```
 </ParamField>
 
 <ParamField body="DomainName" type="string" optional>
   The domain part of the AI profile url
+```json Example
+    "DomainName": "pai-developer"
+```
 </ParamField>
 
 <ParamField body="UserName" type="string" optional>
   Name of the user sending the request
+```json Example
+    "UserName": "Leila"
+```
 </ParamField>
 
 <ParamField body="SessionId" type="string" optional>
   Session identifier for maintaining conversation context
+```json Example
+    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
+```
 </ParamField>
 
 <ParamField body="SourceName" type="string" optional>
   Source application name
+```json Example
+    "SourceName": "slack"
+```
 </ParamField>
 
 <ParamField body="is_message" type="boolean" optional>
   Flag to indicate if the instruction should be treated as a message
+```json Example
+    "is_message": true
+```
 </ParamField>
 
 ```json Example
 {
     "Text": "who is Einstein",
+    "Context": "Respond in two sentences or less.",
+    "DomainName": "pai-developer",
     "UserName": "Leila",
-    "SourceName": "slack",
     "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
+    "SourceName": "slack",
     "is_message": true
 }
 ```
