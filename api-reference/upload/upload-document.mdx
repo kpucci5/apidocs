@@ -8,6 +8,20 @@ description: 'Upload a text document to your memory'
 
 API endpoint for uploading text documents to your memory. This allows you to add longer form content directly to your AI's knowledge base.
 
+---
+
+### Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+---
+
 ### Body Parameters
 
 <ParamField body="Text" type="string" required>
@@ -49,16 +63,6 @@ API endpoint for uploading text documents to your memory. This allows you to add
     "EndTime": "2023-07-09T10:00:00.000Z"
 }
 ```
-
-### Headers
-
-<ParamField header="Content-Type" type="string" required>
-  Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
-</ParamField>
 
 ### Response
 
