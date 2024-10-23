@@ -18,7 +18,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
   Your Personal AI API key
 </ParamField>
 
-### Body
+### File
 
 <ParamField body="file" type="File" required>
   The file to be uploaded
@@ -37,7 +37,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 }
 ```
 
-### Parameters
+### Body
 
 <ResponseField name="Title" type="string" optional>
   Title of the uploaded document
@@ -67,7 +67,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 </ResponseField>
 
 
-### Response
+### Example Responses
 
 <ResponseField name="message" type="string">
   Success or error message
@@ -85,7 +85,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 }
 ```
 
-### Usage
+### Example cURL
 
 ```bash cURL
 curl --location 'https://api.personal.ai/v1/upload-file' \
