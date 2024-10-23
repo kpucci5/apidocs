@@ -1,3 +1,255 @@
 ---
-openapi: post /message
+title: 'Message API'
+description: 'Send messages to your AI and receive intelligent responses based on your memories'
+api: 'POST https://api.personal.ai/v1/message'
 ---
+
+The Message API enables you to have conversations with your AI. The AI's responses are generated based on your uploaded memories and the conversation context.
+
+## Base URL
+
+```bash
+https://api.personal.ai/v1/message
+```
+
+## Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be `application/json`
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your unique API key. Find this in the App under Settings
+</ParamField>
+
+## Request Body
+
+<ParamField body="Text" type="string" required>
+  The message you want to send to your AI
+  ```json Example
+  "how old is my dog?"
+  ```
+</ParamField>
+
+<ParamField body="Context" type="string">
+  Additional context to help the AI provide a better response. Similar to the Reply function.
+  ```json Example
+  "My dog was born in 2008."
+  ```
+</ParamField>
+
+<ParamField body="DomainName" type="string">
+  The domain part of your AI profile URL. For example, if your AI profile is at "ai-climbing.personal.ai", use "ai-climbing"
+  ```json Example
+  "ai-climbing"
+  ```
+</ParamField>
+
+<ParamField body="UserName" type="string">
+  Name of the user sending the request. Useful for multi-user integrations.
+  ```json Example
+  "Leila"
+  ```
+</ParamField>
+
+<ParamField body="SessionId" type="string">
+  Use the same SessionId to maintain conversation context. If not provided, a new SessionId will be returned in the first response.
+  ```json Example
+  "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
+  ```
+</ParamField>
+
+<ParamField body="SourceName" type="string">
+  Name of the source application. Required if using with triggers, should match trigger SourceName.
+  ```json Example
+  "slack"
+  ```
+</ParamField>
+
+<ParamField body="is_stack" type="boolean" default={false}>
+  Flag to also add the user message to memory. If not specified, user message will not be added to memory.
+  ```json Example
+  true
+  ```
+</ParamField>
+
+<ParamField body="is_draft" type="boolean" default={false}>
+  Flag to create a copilot message for the AI.
+  ```json Example
+  true
+  ```
+</ParamField>
+
+## Response
+
+<ResponseField name="ai_message" type="string">
+  The AI's response message
+</ResponseField>
+
+<ResponseField name="ai_score" type="number">
+  Confidence score of the AI's response
+</ResponseField>
+
+<ResponseField name="ai_name" type="string">
+  Name of your AI persona
+</ResponseField>
+
+<ResponseField name="ai_picture" type="string">
+  URL of your AI's profile picture
+</ResponseField>
+
+<ResponseField name="SessionId" type="string">
+  Conversation session identifier
+</ResponseField>
+
+<ResponseField name="source_app" type="string">
+  Name of the application source
+</ResponseField>
+
+## Examples
+
+### Basic Message
+
+<RequestExample>
+```bash cURL
+curl --location 'https://api.personal.ai/v1/message' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{user_api_key}}' \
+--data '{
+    "Text": "what are we talking about",
+    "UserName": "Leila",
+    "DomainName": "ai"
+}'
+```
+
+```javascript Node.js
+const axios = require('axios');
+
+const data = {
+  Text: 'what are we talking about',
+  UserName: 'Leila',
+  DomainName: 'ai'
+};
+
+const config = {
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'YOUR_API_KEY'
+  }
+};
+
+axios.post('https://api.personal.ai/v1/message', data, config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+```python Python
+import requests
+
+url = "https://api.personal.ai/v1/message"
+
+headers = {
+    "Content-Type": "application/json",
+    "x-api-key": "YOUR_API_KEY"
+}
+
+data = {
+    "Text": "what are we talking about",
+    "UserName": "Leila",
+    "DomainName": "ai"
+}
+
+response = requests.post(url, json=data, headers=headers)
+print(response.json())
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "ai_message": "We are talking about your cat's age. Your cat was born in 2000, so it is around 23 years old now. How has your cat been doing lately? 🐱",
+    "ai_score": 47.18898852308854,
+    "ai_name": "Sharon",
+    "ai_picture": "https://lis-profile-images-prod.s3-us-west-2.amazonaws.com/thumbnail_2HNYYWHIEI8BISATZLGFVRYYHW8KVG.jpg",
+    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
+    "source_app": "api"
+}
+```
+</ResponseExample>
+
+### Continued Conversation
+
+<RequestExample>
+```bash cURL
+curl --location 'https://api.personal.ai/v1/message' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{user_api_key}}' \
+--data '{
+    "Text": "tell me more about my cat",
+    "UserName": "Leila",
+    "DomainName": "ai",
+    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
+}'
+```
+</RequestExample>
+
+## Error Responses
+
+### Authorization Failure
+
+<ResponseExample>
+```json
+{
+    "detail": "AI message api unauthorized."
+}
+```
+</ResponseExample>
+
+This error occurs when:
+- Invalid API key
+- Missing API key
+- Expired API key
+
+### Threshold Failure
+
+<ResponseExample>
+```json
+{
+    "detail": "AI message does not meet threshold."
+}
+```
+</ResponseExample>
+
+This error occurs when:
+- AI confidence score is too low
+- Message cannot be processed
+- AI unable to generate appropriate response
+
+## Usage Notes
+
+1. **Session Management**
+   - Use the same SessionId to maintain conversation context
+   - Each new conversation starts with a unique SessionId
+   - SessionId expires after period of inactivity
+
+2. **Memory Integration**
+   - Set `is_stack: true` to save important conversations
+   - Messages saved to memory can be referenced in future conversations
+   - Use Context parameter to provide relevant memory context
+
+3. **Source Applications**
+   - Specify SourceName when integrating with other platforms
+   - SourceName helps track message origin
+   - Useful for analytics and trigger management
+
+4. **Best Practices**
+   - Keep messages clear and concise
+   - Use Context parameter for important background information
+   - Check AI confidence score for response reliability
+   - Handle errors gracefully in your application
+
+Would you like me to add:
+1. More code examples in other languages?
+2. Additional error scenarios?
+3. More detailed usage scenarios?
+4. Integration examples with specific platforms?
