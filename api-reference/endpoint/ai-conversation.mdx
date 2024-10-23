@@ -1,88 +1,52 @@
 ---
-title: 'Conversation API'
-description: 'Retrieve a Conversation from a Channel'
+title: 'AI Conversation'
 api: 'POST https://api.personal.ai/v1/conversation'
+description: 'Retrieve conversation history from a channel'
 ---
 
-Retrieve the conversation history for a specific session or channel.
+## AI Conversation
+
+API endpoint for retrieving conversation history from a channel or session. This endpoint allows you to access previous interactions with your AI.
+
+### Body
+
+<ParamField body="DomainName" type="string" optional>
+  The domain part of the AI profile url
+</ParamField>
+
+<ParamField body="SessionId" type="string" optional>
+  Session identifier to retrieve specific conversation history
+</ParamField>
+
+```json Example
+{
+  "SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b",
+  "DomainName": "labs"
+}
+```
 
 ### Headers
 
 <ParamField header="Content-Type" type="string" required>
-  The type of content being sent. Must be `application/json`
+  Must be set to application/json
 </ParamField>
 
 <ParamField header="x-api-key" type="string" required>
-  Your unique API key (found in App under Settings)
-</ParamField>
-
-### Body Parameters
-
-<ParamField body="SessionId" type="string" required>
-  The session ID for the conversation you want to retrieve
-  ```json Example
-  "dd3ec564-5948-4da0-8ab6-94b23f92705b"
-  ```
-</ParamField>
-
-<ParamField body="DomainName" type="string">
-  The domain name of the AI persona
-  ```json Example
-  "labs"
-  ```
+  Your Personal AI API key
 </ParamField>
 
 ### Response
 
-The response is an array of conversation messages, with each message containing:
-
-<ResponseField name="ai_message" type="string">
-  The message content
+<ResponseField name="array" type="array">
+  Array of conversation messages, including both user messages and AI responses
 </ResponseField>
 
-<ResponseField name="ai_score" type="number">
-  Confidence score for AI messages
-</ResponseField>
-
-<ResponseField name="ai_name" type="string">
-  Name of the AI or user
-</ResponseField>
-
-<ResponseField name="raw_message" type="string">
-  Original message text
-</ResponseField>
-
-<ResponseField name="timestamp" type="string">
-  UTC timestamp of the message
-</ResponseField>
-
-<ResponseField name="SessionId" type="string">
-  Session identifier
-</ResponseField>
-
-<ResponseField name="Metadata" type="object">
-  Additional message metadata
-</ResponseField>
-
-<RequestExample>
-```bash cURL
-curl --location 'https://api.personal.ai/v1/conversation' \
---header 'Content-Type: application/json' \
---header 'x-api-key: user-api-key' \
---data '{
-  "SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b",
-  "DomainName": "labs"
-}'
-```
-</RequestExample>
-
-<ResponseExample>
-```json Response
+```json Example Success Response
 [
     {
         "ai_message": "what is a personal AI",
         "ai_score": 0.0,
-        "ai_name": "Sharon Zhang",
+        "ai_name": "AI Name",
         "ai_picture": null,
         "raw_message": "what is a personal AI",
         "timestamp": "2024-09-16T03:52:40.821Z",
@@ -92,7 +56,7 @@ curl --location 'https://api.personal.ai/v1/conversation' \
     {
         "ai_message": "A personal AI is a digital extension of your mind...",
         "ai_score": 0.0,
-        "ai_name": "Sharon Zhang",
+        "ai_name": "AI Name",
         "ai_picture": null,
         "raw_message": "A personal AI is a digital extension of your mind...",
         "timestamp": "2024-09-16T03:52:40.822Z",
@@ -101,4 +65,28 @@ curl --location 'https://api.personal.ai/v1/conversation' \
     }
 ]
 ```
-</ResponseExample>
+
+```json Example Error Response
+{
+    "detail": "AI conversation api unauthorized."
+}
+```
+
+### Usage
+
+```bash cURL
+curl --location 'https://api.personal.ai/v1/conversation' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <your-api-key>' \
+--data '{
+  "SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b",
+  "DomainName": "labs"
+}'
+```
+
+### Error Codes
+
+| Code | Description |
+| --- | --- |
+| 503 | Authorization Failure - API key is invalid |
+| 404 | Not Found - Conversation or session not found |
