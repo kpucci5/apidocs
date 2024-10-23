@@ -1,6 +1,6 @@
 ---
 title: 'AI Instruction'
-api: 'POST https://api.personal.ai/v1/instruction'
+api: 'POST https://api.personal.ai/v1/instruction?cmd=search'
 description: 'Send instructions to your AI for specific actions'
 ---
 
@@ -20,8 +20,8 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
 
 ## Query Parameters
 
-<ParamField query="cmd" type="string" required>
-  Command to execute (e.g., "chatgpt")
+<ParamField query="cmd=" type="string" required>
+  Command to execute (e.g., "chatgpt", "search")
 </ParamField>
 
 ## Body
