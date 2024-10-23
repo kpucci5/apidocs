@@ -41,11 +41,10 @@
   ],
   "navigation": [
     {
-      "tab": "Home",
-      "pages": ["home"]
+      "group": "Home",
+      "pages": ["home/index"]
     },
     {
-      "tab": "Documentation",
       "group": "Get Started",
       "pages": [
         "introduction",
@@ -54,45 +53,6 @@
       ]
     },
     {
-      "tab": "Documentation",
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "tab": "API Reference",
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "tab": "API Reference",
-      "group": "Message APIs",
-      "pages": [
-        "api-reference/endpoint/ai-conversation",
-        "api-reference/endpoint/ai-instruction",
-        "api-reference/endpoint/ai-message"
-      ]
-    },
-    {
-      "tab": "API Reference",
-      "group": "Memory APIs",
-      "pages": [
-        "api-reference/upload/upload-document",
-        "api-reference/upload/upload-file",
-        "api-reference/upload/upload-url",
-        "api-reference/endpoint/ai-memory"
-      ]
-    }
-  ],
-    {
       "group": "Essentials",
       "pages": [
         "essentials/markdown",
@@ -117,7 +77,7 @@
         "api-reference/endpoint/ai-message"
       ]
     },
-        {
+    {
       "group": "Memory APIs",
       "pages": [
         "api-reference/upload/upload-document",
