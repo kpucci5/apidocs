@@ -8,7 +8,7 @@ description: 'Retrieve conversation history from a channel'
 
 API endpoint for retrieving conversation history from a channel or session. This endpoint allows you to access previous interactions with your AI.
 
-### Headers
+## Headers
 
 <ParamField header="Content-Type" type="string" required>
   Must be set to application/json
@@ -18,7 +18,7 @@ API endpoint for retrieving conversation history from a channel or session. This
   Your Personal AI API key
 </ParamField>
 
-### Body
+## Body
 
 <ParamField body="DomainName" type="string" optional>
   The domain part of the AI profile url
@@ -34,7 +34,7 @@ API endpoint for retrieving conversation history from a channel or session. This
 ```
 </ParamField>
 
-### Example Requests & Responses
+## Example Request
 
 <ResponseField name="array" type="array">
   Array of conversation messages, including both user messages and AI responses
@@ -46,6 +46,8 @@ API endpoint for retrieving conversation history from a channel or session. This
   "DomainName": "labs"
 }
 ```
+
+## Example Response
 
 ```json Example Success Response
 [
@@ -72,7 +74,7 @@ API endpoint for retrieving conversation history from a channel or session. This
 ]
 ```
 
-### Example cURL
+## Example cURL
 
 ```bash cURL
 curl --location 'https://api.personal.ai/v1/conversation' \
@@ -84,7 +86,7 @@ curl --location 'https://api.personal.ai/v1/conversation' \
 }'
 ```
 
-### Error Codes
+## Error Codes
 
 | Code | Description |
 | --- | --- |
