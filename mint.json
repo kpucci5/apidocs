@@ -72,7 +72,7 @@
   "anchors": [
     {
       "name": "Community",
-      "icon": "slack",
+      "icon": "users",
       "url": "https://community.personal.ai"
     },
     {
