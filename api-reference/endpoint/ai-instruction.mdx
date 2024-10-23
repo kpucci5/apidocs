@@ -1,65 +1,67 @@
 ---
-title: 'Instruction API'
-description: 'Send instructions to your AI'
+title: 'AI Instruction'
 api: 'POST https://api.personal.ai/v1/instruction'
+description: 'Send instructions to your AI for specific actions'
 ---
 
-Send specific instructions to your AI with additional command parameters.
+## AI Instruction
+
+API endpoint for sending specific instructions to your AI. This endpoint allows you to interact with different AI models and execute specific commands.
+
+### Query Parameters
+
+<ParamField query="cmd" type="string" required>
+  Command to execute (e.g., "chatgpt")
+</ParamField>
+
+### Body
+
+<ParamField body="Text" type="string" required>
+  Text instruction to send to your AI
+</ParamField>
+
+<ParamField body="Context" type="string" optional>
+  Additional context for the instruction
+</ParamField>
+
+<ParamField body="DomainName" type="string" optional>
+  The domain part of the AI profile url
+</ParamField>
+
+<ParamField body="UserName" type="string" optional>
+  Name of the user sending the request
+</ParamField>
+
+<ParamField body="SessionId" type="string" optional>
+  Session identifier for maintaining conversation context
+</ParamField>
+
+<ParamField body="SourceName" type="string" optional>
+  Source application name
+</ParamField>
+
+<ParamField body="is_message" type="boolean" optional>
+  Flag to indicate if the instruction should be treated as a message
+</ParamField>
+
+```json Example
+{
+    "Text": "who is Einstein",
+    "UserName": "Leila",
+    "SourceName": "slack",
+    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
+    "is_message": true
+}
+```
 
 ### Headers
 
 <ParamField header="Content-Type" type="string" required>
-  The type of content being sent. Must be `application/json`
+  Must be set to application/json
 </ParamField>
 
 <ParamField header="x-api-key" type="string" required>
-  Your unique API key (found in App under Settings)
-</ParamField>
-
-### Query Parameters
-
-<ParamField query="cmd" type="string">
-  Command type for the instruction
-  ```json Example
-  "chatgpt"
-  ```
-</ParamField>
-
-### Body Parameters
-
-<ParamField body="Text" type="string" required>
-  Instruction to send to your AI
-  ```json Example
-  "who is Einstein"
-  ```
-</ParamField>
-
-<ParamField body="UserName" type="string">
-  Name of the user sending the request
-  ```json Example
-  "Leila"
-  ```
-</ParamField>
-
-<ParamField body="SourceName" type="string">
-  Source application name
-  ```json Example
-  "slack"
-  ```
-</ParamField>
-
-<ParamField body="SessionId" type="string">
-  Session identifier for conversation continuity
-  ```json Example
-  "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
-  ```
-</ParamField>
-
-<ParamField body="is_message" type="boolean">
-  Flag to treat the instruction as a message
-  ```json Example
-  true
-  ```
+  Your Personal AI API key
 </ParamField>
 
 ### Response
@@ -69,14 +71,31 @@ Send specific instructions to your AI with additional command parameters.
 </ResponseField>
 
 <ResponseField name="ai_score" type="number">
-  Confidence score of the AI response
+  Confidence score of the AI's response
 </ResponseField>
 
-<RequestExample>
+```json Example Success Response
+{
+    "ai_message": "Einstein was a renowned physicist who developed the theory of relativity. He is considered one of the most influential scientists of the 20th century.",
+    "ai_score": 95.5,
+    "ai_name": "AI Name",
+    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
+    "source_app": "api"
+}
+```
+
+```json Example Error Response
+{
+    "detail": "AI instruction api unauthorized."
+}
+```
+
+### Usage
+
 ```bash cURL
 curl --location 'https://api.personal.ai/v1/instruction?cmd=chatgpt' \
 --header 'Content-Type: application/json' \
---header 'x-api-key: user-api' \
+--header 'x-api-key: <your-api-key>' \
 --data '{
     "Text": "who is Einstein",
     "UserName": "Leila",
@@ -85,14 +104,10 @@ curl --location 'https://api.personal.ai/v1/instruction?cmd=chatgpt' \
     "is_message": true
 }'
 ```
-</RequestExample>
 
-<ResponseExample>
-```json Response
-{
-    "ai_message": "Einstein was a renowned physicist who developed the theory of relativity...",
-    "ai_score": 95.5,
-    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
-}
-```
-</ResponseExample>
+### Error Codes
+
+| Code | Description |
+| --- | --- |
+| 503 | Authorization Failure - API key is invalid |
+| 503 | Processing Failure - Instruction could not be processed |
