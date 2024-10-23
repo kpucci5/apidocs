@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {
-    "dark": "https://lis-profile-images-prod.s3-us-west-2.amazonaws.com/SFVV7LV23KC9W5RK9KIHJM7IBMVA7W.jpg",
-    "light": "https://lis-profile-images-prod.s3-us-west-2.amazonaws.com/SFVV7LV23KC9W5RK9KIHJM7IBMVA7W.jpg"
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
-  "favicon": "https://lis-profile-images-prod.s3-us-west-2.amazonaws.com/SFVV7LV23KC9W5RK9KIHJM7IBMVA7W.jpg",
+  "favicon": "/favicon.svg",
   "colors": {
     "primary": "#6656FF",
     "light": "#A09EFF",
@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:info@personal.ai"
+      "url": "mailto:hi@mintlify.com"
     }
   ],
   "topbarCtaButton": {
@@ -39,13 +39,13 @@
     },
     {
       "name": "Community",
-      "icon": "Personal AI",
-      "url": "https://community.personal.ai"
+      "icon": "slack",
+      "url": "https://mintlify.com/community"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://www.personal.ai/blog"
+      "url": "https://mintlify.com/blog"
     }
   ],
   "navigation": [
@@ -74,40 +74,14 @@
         "api-reference/introduction"
       ]
     },
-{
-{
-  "name": "Personal.ai API",
-  "navigation": [
     {
-      "group": "Getting Started",
+      "group": "Endpoint Examples",
       "pages": [
-        "introduction",
-        "authentication"
-      ]
-    },
-    {
-      "group": "Memory API",
-      "pages": [
-        {
-          "group": "Upload",
-          "pages": [
-            "api-reference/upload-document",
-            "api-reference/upload-file",
-            "api-reference/upload-url"
-          ]
-        },
-        {
-          "group": "Interaction",
-          "pages": [
-            "api-reference/ai-memory",
-            "api-reference/ai-message",
-            "api-reference/ai-conversation"
-          ]
-        }
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete"
       ]
     }
-  ]
-}
   ],
   "footerSocials": {
     "x": "https://x.com/mintlify",
