@@ -22,10 +22,16 @@ API endpoint for interacting with your AI through messages. This endpoint allows
 
 <ParamField body="Text" type="string" required>
   Message to send to your AI for a response
+  ```json Example
+  "Tell me about Personal AI"
+  ```
 </ParamField>
 
 <ParamField body="Context" type="string" optional>
   Message to add additional context to the AI for a response (Similar to Reply function)
+  ```json Example
+  "Context": "You should format your response into paragraphs and use bullet points when needed."
+  ```
 </ParamField>
 
 <ParamField body="DomainName" type="string" optional>
