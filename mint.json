@@ -75,17 +75,35 @@
       ]
     },
 {
+{
   "name": "Personal.ai API",
   "navigation": [
     {
-      "group": "API Reference",
+      "group": "Getting Started",
       "pages": [
-        "api-reference/endpoint/ai-memory",
-        "api-reference/endpoint/ai-message",
-        "api-reference/endpoint/upload-document",
-        "api-reference/endpoint/upload-file",
-        "api-reference/endpoint/upload-url",
-        "api-reference/endpoint/ai-conversation"
+        "introduction",
+        "authentication"
+      ]
+    },
+    {
+      "group": "Memory API",
+      "pages": [
+        {
+          "group": "Upload",
+          "pages": [
+            "api-reference/upload-document",
+            "api-reference/upload-file",
+            "api-reference/upload-url"
+          ]
+        },
+        {
+          "group": "Interaction",
+          "pages": [
+            "api-reference/ai-memory",
+            "api-reference/ai-message",
+            "api-reference/ai-conversation"
+          ]
+        }
       ]
     }
   ]
