@@ -55,12 +55,12 @@
     {
       "group": "Essentials",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "documentation/essentials/markdown",
+        "documentation/essentials/code",
+        "documentation/essentials/images",
+        "documentation/essentials/settings",
+        "documentation/essentials/navigation",
+        "documentation/essentials/reusable-snippets"
       ]
     },
     {
