@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Personal AI Documentation",
 "logo": {
-  "dark": "/public/logo/dark.svg",
-  "light": "/public/logo/light.svg"
+  "dark": "/logo/dark.svg",
+  "light": "/logo/light.svg"
 },
-"favicon": "/public/favicon.svg",
+"favicon": "/favicon.svg",
   "colors": {
     "primary": "#6656FF",
     "light": "#A09EFF",
