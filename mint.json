@@ -52,17 +52,6 @@
         "documentation/development"
       ]
     },
-    {
-      "group": "Essentials",
-      "pages": [
-        "documentation/essentials/markdown",
-        "documentation/essentials/code",
-        "documentation/essentials/images",
-        "documentation/essentials/settings",
-        "documentation/essentials/navigation",
-        "documentation/essentials/reusable-snippets"
-      ]
-    },
         {
       "group": "Customizing Your AI",
       "pages": [
