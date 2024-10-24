@@ -75,6 +75,12 @@
         "documentation/training/memory-upload"
       ]
     },
+        {
+      "group": "Messaging Your AI",
+      "pages": [
+        "documentation/messaging/ai-controls"
+      ]
+    },
     {
       "group": "Getting Started",
       "pages": [
