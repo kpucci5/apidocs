@@ -69,6 +69,12 @@
         "documentation/customization/persona-settings"
       ]
     },
+        {
+      "group": "Training Your AI,
+      "pages": [
+        "documentation/training/memory-upload"
+      ]
+    },
     {
       "group": "API Documentation",
       "pages": [
