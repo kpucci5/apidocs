@@ -92,7 +92,8 @@
         "api-reference/endpoint/upload-url",
         "api-reference/endpoint/ai-memory"
       ]
-    },
+    }
+  ],
   "anchors": [
     {
       "name": "Community",
