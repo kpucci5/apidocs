@@ -23,7 +23,7 @@ API endpoint for interacting with your AI through messages. This endpoint allows
 <ParamField body="Text" type="string" required>
   Message to send to your AI for a response
   ```json Example
-  "Twho is Mafan"
+  "who is Mafan"
   ```
 </ParamField>
 
@@ -63,14 +63,14 @@ API endpoint for interacting with your AI through messages. This endpoint allows
 </ParamField>
 
 <ParamField body="is_stack" type="boolean" optional>
-  Flag to also add the user message (Text) to memory. Defaults to false.
+  Flag to also add the user message (Text) to memory. Defaults to false if nothing is entered.
   ```json Example
   "is_stack": true
   ```
 </ParamField>
 
 <ParamField body="is_draft" type="boolean" optional>
-  Flag to create a copilot message for the AI. Defaults to false.
+  Flag to create a copilot message for the AI. Defaults to false if nothing is entered.
   ```json Example
   "is_draft": true
   ```
