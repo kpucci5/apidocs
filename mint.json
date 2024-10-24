@@ -63,6 +63,12 @@
         "documentation/essentials/reusable-snippets"
       ]
     },
+        {
+      "group": "Customizing Your AI",
+      "pages": [
+        "documentation/customization/persona-settings"
+      ]
+    },
     {
       "group": "API Documentation",
       "pages": [
