@@ -45,7 +45,7 @@
       "pages": ["welcome/index"]
     },
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
         "documentation/introduction",
         "documentation/product",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Getting Started",
       "pages": [
         "api-reference/introduction"
       ]
