@@ -82,22 +82,17 @@
       ]
     },
     {
-      "group": "Message APIs",
+      "group": "Personal AI APIs",
       "pages": [
         "api-reference/endpoint/ai-conversation",
         "api-reference/endpoint/ai-instruction",
-        "api-reference/endpoint/ai-message"
+        "api-reference/endpoint/ai-message",
+        "api-reference/endpoint/upload-document",
+        "api-reference/endpoint/upload-file",
+        "api-reference/endpoint/upload-url",
+        "api-reference/endpoint/ai-memory"
       ]
     },
-    {
-      "group": "Memory APIs",
-      "pages": [
-        "api-reference/upload/upload-document",
-        "api-reference/upload/upload-file",
-        "api-reference/upload/upload-url",
-        "api-reference/upload/ai-memory"
-      ]
-    }
   ],
   "anchors": [
     {
