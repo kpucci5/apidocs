@@ -55,7 +55,8 @@
       "group": "Customizing Your AI",
       "pages": [
         "documentation/customization/persona-settings",
-        "documentation/customization/channel-directives"
+        "documentation/customization/channel-directives",
+        "documentation/customization/advanced-settings"
       ]
     },
         {
