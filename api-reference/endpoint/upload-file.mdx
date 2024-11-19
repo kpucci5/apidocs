@@ -41,47 +41,52 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 
 <ResponseField name="Title" type="string" optional>
   Title of the uploaded document
-</ResponseField>
 ```json Example Request
 "Title": "My Document"
 ```
+</ResponseField>
+
 
 <ResponseField name="DomainName" type="string" optional>
   Domain name of AI Persona to upload to (e.g., "paidevelopers-python" from paidevelopers-python.personal.ai)
-</ResponseField>
 ```json Example Request
 "DomainName": "paidevelopers-python"
 ```
+</ResponseField>
+
 
 <ResponseField name="StartTime" type="string" optional>
   ISO timestamp string indicating start time (UTC). Defaults to current time.
-</ResponseField>
 ```json Example Request
 "StartTime": "2024-10-09T10:00:00.000Z"
 ```
+</ResponseField>
+
 
 <ResponseField name="EndTime" type="string" optional>
   ISO timestamp string indicating end time (UTC). Defaults to current time.
-  Example: "2023-07-09T10:00:00.000Z"
-</ResponseField>
 ```json Example Request
 "EndTime": "2024-10-10T10:00:00.000Z"
 ```
+</ResponseField>
+
 
 <ResponseField name="Tags" type="string" optional>
   Comma delimited list of tags for context and reference
-</ResponseField>
 ```json Example Request
 "Tags": "documents,developers,coding"
 ```
+</ResponseField>
+
 
 <ResponseField name="is_stack" type="boolean" optional>
   Boolean to specify whether to add the document to memory. If false, upload shows up as draft in Documents.
   Defaults to true.
-</ResponseField>
 ```json Example Request
 "is_stack": "true"
 ```
+</ResponseField>
+
 
 
 ### Example Responses
