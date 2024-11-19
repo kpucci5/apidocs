@@ -79,12 +79,10 @@
         {
       "group": "Messaging Your AI",
       "pages": [
-        "documentation/messaging/ai-controls",
         "documentation/messaging/message-bar-features",
         "documentation/messaging/channel-ai-controls",
         "documentation/messaging/direct-messages-dms",
         "documentation/messaging/messaging-in-channels",
-        "documentation/messaging/channel-ai-controls",
         "documentation/messaging/public-chat",
         "documentation/messaging/llm-friends"
       ]
