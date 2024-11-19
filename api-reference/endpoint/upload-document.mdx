@@ -24,30 +24,51 @@ API endpoint for uploading text documents to your memory. This allows you to add
 
 <ParamField body="Text" type="string" required>
   Body of text to upload to the memory. This should be as clean as possible.
+    ```json Example Request
+"Text": "This is a long document that is consumed into the document view!"
+```
 </ParamField>
 
 <ParamField body="Title" type="string" optional>
   Title of the uploaded document
+  ```json Example Request
+"Title": "New Document"
+```
 </ParamField>
 
 <ParamField body="DomainName" type="string" optional>
   Domain name of AI Persona to upload to
+  ```json Example Request
+"DomainName": "paidevelopers-comapany"
+```
 </ParamField>
 
 <ParamField body="StartTime" type="string" optional>
   ISO timestamp string indicating start time (UTC)
+  ```json Example Request
+"StartTime": "2024-10-09T10:00:00.000Z"
+```
 </ParamField>
 
 <ParamField body="EndTime" type="string" optional>
   ISO timestamp string indicating end time (UTC)
+  ```json Example Request
+"EndTime": "2024-10-10T10:00:00.000Z"
+```
 </ParamField>
 
 <ParamField body="Tags" type="string" optional>
   Comma delimited list of tags for context and reference
+  ```json Example Request
+"Tags": "documents,blog,draft"
+```
 </ParamField>
 
 <ParamField body="is_stack" type="boolean" optional>
   Boolean to specify whether to add the document to memory. Defaults to true.
+  ```json Example Request
+"is_stack": true
+```
 </ParamField>
 
 ```json Example
@@ -88,10 +109,10 @@ curl --location 'https://api.personal.ai/v1/upload-text' \
 --header 'x-api-key: <your-api-key>' \
 --data '{
     "Text": "This is a long document that is consumed into the document view.",
-    "Title": "Personal AI",
-    "DomainName": "ai",
-    "Tags": "#doc1",
-    "is_stack": false
+    "Title": "New Document",
+    "DomainName": "paidevelopers-comapany",
+    "Tags": "documents,blog,draft",
+    "is_stack": true
 }'
 ```
 
