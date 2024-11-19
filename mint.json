@@ -56,25 +56,44 @@
       "pages": [
         "documentation/customization/persona-settings",
         "documentation/customization/channel-directives",
+        "documentation/customization/Publishing-Your-AI",
+        "documentation/customization/messaging-defaults",
+        "documentation/customization/messaging-integrations",
         "documentation/customization/advanced-settings"
       ]
     },
         {
       "group": "Training Your AI",
       "pages": [
-        "documentation/training/memory-upload"
+        "documentation/training/memory-upload",
+        "documentation/training/google-drive",
+        "documentation/training/one-drive",
+        "documentation/training/gmail",
+        "documentation/training/outlook",
+        "documentation/training/memory-stack",
+        "documentation/training/upload-library",
+        "documentation/training/training-tools-in-the-document-editor",
+        "documentation/training/chrome-extension"
       ]
     },
         {
       "group": "Messaging Your AI",
       "pages": [
-        "documentation/messaging/ai-controls"
+        "documentation/messaging/ai-controls",
+        "documentation/messaging/message-bar-features",
+        "documentation/messaging/channel-ai-controls",
+        "documentation/messaging/direct-messages-dms",
+        "documentation/messaging/messaging-in-channels",
+        "documentation/messaging/channel-ai-controls",
+        "documentation/messaging/public-chat",
+        "documentation/messaging/llm-friends"
       ]
     },
     {
       "group": "Getting Started",
       "pages": [
-        "api-reference/introduction"
+        "api-reference/introduction",
+        "api-reference/navigating-personal-ai"
       ]
     },
     {
