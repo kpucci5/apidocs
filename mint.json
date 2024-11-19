@@ -90,13 +90,6 @@
       ]
     },
     {
-      "group": "Getting Started",
-      "pages": [
-        "api-reference/introduction",
-        "api-reference/navigating-personal-ai"
-      ]
-    },
-    {
       "group": "Personal AI APIs",
       "pages": [
         "api-reference/endpoint/ai-conversation",
