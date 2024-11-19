@@ -22,30 +22,51 @@ API endpoint for uploading content from URLs to your memory. Supports various ty
 
 <ParamField body="Url" type="string" required>
   URL to upload (includes public Youtube URLs, LinkedIn profiles, news articles, blogs, etc)
+  ```json Example Request
+  "Url": "https://www.youtube.com/watch?v=-9F20HckH8w"
+  ```
 </ParamField>
 
 <ParamField body="Title" type="string" optional>
   Title of the uploaded content
+ ```json Example Request
+  "Title": "Personal AI Company Overview (2024)"
+  ```
 </ParamField>
 
 <ParamField body="DomainName" type="string" optional>
   Domain name of AI Persona to upload to
+   ```json Example Request
+  "DomainName": "paidevelopers-company"
+  ```
 </ParamField>
 
 <ParamField body="StartTime" type="string" optional>
   ISO timestamp string indicating start time (UTC)
+```json Example Request
+"StartTime": "2024-10-09T10:00:00.000Z"
+```
 </ParamField>
 
 <ParamField body="EndTime" type="string" optional>
   ISO timestamp string indicating end time (UTC)
+  ```json Example Request
+"EndTime": "2024-10-10T10:00:00.000Z"
+```
 </ParamField>
 
 <ParamField body="Tags" type="string" optional>
   Comma delimited list of tags for context and reference
+    ```json Example Request
+"Tags": "personal ai,youtube,company,overview"
+```
 </ParamField>
 
 <ParamField body="is_stack" type="boolean" optional>
   Boolean to specify whether to add the content to memory. Defaults to true.
+      ```json Example Request
+"is_stack": true
+```
 </ParamField>
 
 ```json Example
