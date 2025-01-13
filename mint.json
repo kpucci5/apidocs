@@ -41,7 +41,7 @@
     {
       "name": "Release Notes",
       "url": "release-notes"
-    },
+    }
   ],
   "navigation": [
     {
@@ -104,10 +104,10 @@
       ]
     },
     {
-    "group": "Test",
-    "pages": [
-      "release-notes/test",
-    ]
+      "group": "Test",
+      "pages": [
+        "release-notes/test"
+      ]
     }
   ],
   "anchors": [
