@@ -103,6 +103,12 @@
         "api-reference/endpoint/ai-memory"
       ]
     }
+    {
+    "group": "Test",
+    "pages": [
+      "release-notes/test"
+    ]
+    }
   ],
   "anchors": [
     {
