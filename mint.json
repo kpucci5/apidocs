@@ -27,10 +27,6 @@
   },
   "tabs": [
     {
-      "name": "Welcome",
-      "url": "welcome"
-    },
-    {
       "name": "Product Docs",
       "url": "documentation"
     },
@@ -39,8 +35,8 @@
       "url": "api-reference"
     },
     {
-      "name": "Release Notes",
-      "url": "release-notes"
+      "name": "Welcome",
+      "url": "welcome"
     }
   ],
   "navigation": [
