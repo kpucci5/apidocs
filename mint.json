@@ -98,12 +98,6 @@
         "api-reference/endpoint/upload-url",
         "api-reference/endpoint/ai-memory"
       ]
-    },
-    {
-      "group": "Test",
-      "pages": [
-        "release-notes/test"
-      ]
     }
   ],
   "anchors": [
