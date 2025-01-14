@@ -42,7 +42,9 @@
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["welcome/index"]
+      "pages": [
+        "welcome/index"
+      ]
     },
     {
       "group": "Getting Started",
@@ -51,7 +53,7 @@
         "documentation/getting-started/navigating-personal-ai"
       ]
     },
-        {
+    {
       "group": "Customizing Your AI",
       "pages": [
         "documentation/customization/persona-settings",
@@ -62,7 +64,7 @@
         "documentation/customization/advanced-settings"
       ]
     },
-        {
+    {
       "group": "Training Your AI",
       "pages": [
         "documentation/training/memory-upload",
@@ -76,7 +78,7 @@
         "documentation/training/chrome-extension"
       ]
     },
-        {
+    {
       "group": "Messaging Your AI",
       "pages": [
         "documentation/messaging/message-bar-features",
