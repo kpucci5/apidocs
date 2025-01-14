@@ -41,12 +41,6 @@
   ],
   "navigation": [
     {
-      "group": "Welcome",
-      "pages": [
-        "welcome/index"
-      ]
-    },
-    {
       "group": "Getting Started",
       "pages": [
         "documentation/getting-started/introduction",
@@ -99,6 +93,12 @@
         "api-reference/endpoint/upload-file",
         "api-reference/endpoint/upload-url",
         "api-reference/endpoint/ai-memory"
+      ]
+    },
+    {
+      "group": "Welcome",
+      "pages": [
+        "welcome/index"
       ]
     }
   ],
