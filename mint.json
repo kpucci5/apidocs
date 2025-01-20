@@ -80,7 +80,8 @@
         "documentation/messaging/direct-messages-dms",
         "documentation/messaging/messaging-in-channels",
         "documentation/messaging/public-chat",
-        "documentation/messaging/llm-friends"
+        "documentation/messaging/llm-friends",
+        "documentation/messaging/ai-mentions"
       ]
     },
     {
