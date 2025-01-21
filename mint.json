@@ -82,7 +82,8 @@
         "documentation/messaging/messaging-in-channels",
         "documentation/messaging/public-chat",
         "documentation/messaging/llm-friends",
-        "documentation/messaging/ai-mentions"
+        "documentation/messaging/ai-mentions",
+        "documentation/messaging/multi-memory"
       ]
     },
     {
