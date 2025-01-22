@@ -88,6 +88,12 @@
         "documentation/messaging/multi-memory"
       ]
     },
+        {
+      "group": "Enterprise Workspace",
+      "pages": [
+        "documentation/enterprise-workspace/test"
+      ]
+    }
     {
       "group": "Personal AI APIs",
       "pages": [
