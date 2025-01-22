@@ -101,7 +101,8 @@
     {
       "group": "Realase Notes",
       "pages": [
-        "release-notes/index"
+        "release-notes/index",
+        "release-notes/january"
       ]
     }
   ],
