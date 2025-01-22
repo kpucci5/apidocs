@@ -78,6 +78,7 @@
       "group": "Messaging Your AI",
       "pages": [
         "documentation/messaging/message-bar-features",
+        "documentation/messaging/ai-controls",
         "documentation/messaging/channel-ai-controls",
         "documentation/messaging/direct-messages-dms",
         "documentation/messaging/messaging-in-channels",
