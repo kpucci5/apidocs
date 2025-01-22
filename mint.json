@@ -99,10 +99,11 @@
       ]
     },
     {
-      "group": "Realase Notes",
+      "group": "Release Notes",
       "pages": [
         "release-notes/index",
-        "release-notes/january"
+        "release-notes/january/january-15",
+        "release-notes/january/january-22"
       ]
     }
   ],
