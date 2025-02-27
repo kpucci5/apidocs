@@ -88,12 +88,22 @@
         "documentation/messaging/multi-memory"
       ]
     },
+    /* Hidden Enterprise section (uncomment when ready to publish)
     {
       "group": "Enterprise Workspace",
       "pages": [
-        "documentation/enterprise-workspace/test"
+        "documentation/enterprise/channel-creation",
+        "documentation/enterprise/collaborate-on-persona",
+        "documentation/enterprise/create-new-persona",
+        "documentation/enterprise/invite-to-chat",
+        "documentation/enterprise/manage-persona-DM",
+        "documentation/enterprise/new-message",
+        "documentation/enterprise/personal-level-settings",
+        "documentation/enterprise/training-studio",
+        "documentation/enterprise/transfer-ownership",
+        "documentation/enterprise/workspace-settings"
       ]
-    },
+    }, */
     {
       "group": "Personal AI APIs",
       "pages": [
