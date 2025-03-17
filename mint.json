@@ -97,7 +97,8 @@
         "api-reference/endpoint/upload-document",
         "api-reference/endpoint/upload-file",
         "api-reference/endpoint/upload-url",
-        "api-reference/endpoint/ai-memory"
+        "api-reference/endpoint/ai-memory",
+        "api-reference/endpoint/get-document"
       ]
     },
     {
