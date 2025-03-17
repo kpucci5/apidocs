@@ -1,0 +1,90 @@
+---
+title: 'Get Document'
+api: 'POST https://api.personal.ai/v1/document'
+description: 'Retrieve a list or specific documents from a persona. Works in conjunction with the Update Document endpoint.'
+---
+
+## Overview
+
+API endpoint for retrieving a specific document or list of documents from a persona. This endpoint allows you to access any document by name or pulling a series of documents using the query parameters for response size.
+
+## Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+## Query Parameters
+<ParamField header="size" type="string" required>
+  Your desired number of documents to be returned.
+</ParamField>
+
+## Body
+
+<ParamField body="DomainName" type="string" optional>
+  The domain part of the AI profile url
+```json Example Request
+"DomainName": "paidevelopers-python"
+```
+</ParamField>
+
+<ParamField body="Text" type="string" optional>
+  Document name to retrieve a specific document. Leave blank if you want to retrieve mulitple documents.
+```json Example Request
+"Text": "Python Reflection"
+```
+</ParamField>
+
+## Example Request
+
+<ResponseField name="array" type="array">
+  Array of conversation messages, including both user messages and AI responses
+</ResponseField>
+
+```json Example Request
+{
+  "Text": "Python Reflection",
+  "DomainName": "paidevelopers-python"
+}
+```
+
+## Example Response
+
+```json Example Success Response
+[
+    {
+        "id": "66c6706fe6fffd040957a7a3",
+        "title": " Python Reflection",
+        "text": "**Title: Reflecting on Python: My Journey Through a Language Revolution** When I first encountered Python, it was like meeting an old friend who instantly felt familiar and welcoming. I remember divin",
+        "type": "Document",
+        "timestamp": "2025-03-17T17:24:44.874+00:00"
+    }
+]
+```
+
+## Example cURL
+
+```bash cURL
+curl --location 'https://api.personal.ai/v1/document?size=5' \
+--header 'x-api-key: <your-api-key>' \
+--header 'Content-Type: application/json' \
+--data '{
+    "Text": " Python Reflection",
+    "DomainName": "paidevelopers-python"
+}''
+```
+
+## Error Codes
+
+| Code | Description |
+| --- | --- |
+| 503 | Authorization Failure - API key is invalid |
+```json Example Error Response
+{
+    "detail": "AI conversation api unauthorized."
+}
+```
