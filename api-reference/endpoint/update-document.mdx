@@ -1,0 +1,82 @@
+---
+title: 'Update Document'
+api: 'PUT https://api.personal.ai/v1/update-document'
+description: 'Update a specific docuemnt using the feed_id (document ID) of that document.'
+---
+
+## Overview
+
+API endpoint for updating a specific document in a persona's memory. This endpoint allows you make changes to the document, but it's important to note that the entire text must be passed, not just the updates as the previous content will not be reloaded in.
+
+## Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+## Query Parameters
+<ParamField header="feed_id" type="string" required>
+  The ID associated with tthe document you want to upload. This can be retrieved using the Get Document endpoint.
+</ParamField>
+
+## Body
+
+<ParamField body="DomainName" type="string" optional>
+  The domain part of the AI profile url
+```json Example Request
+"DomainName": "paidevelopers-python"
+```
+</ParamField>
+
+<ParamField body="Text" type="string" optional>
+  Entire updated text you want to pass for replacing the existing document.
+```json Example Request
+"Text": "This is the updated text."
+```
+</ParamField>
+
+## Example Request
+
+<ResponseField name="array" type="array">
+  Array of conversation messages, including both user messages and AI responses
+</ResponseField>
+
+```json Example Request
+{
+  "Text": "Python Reflection",
+  "DomainName": "paidevelopers-python"
+}
+```
+
+## Example Response
+
+```json Example Success Response
+{"id":"<feed_id>","type":"MEMORY","memlevel":"MEMBLOCK","memlabel":"This is the updated text.","feedTextRaw":null,"ownerDnsName":"PAI Developers","start_time_utc":"2024-08-21T22:55:43.294+00:00","end_time_utc":null,"creator":{"name":"Developers of Personal AI","identity_id":138309,"domain_id":0,"propertyBag":{"email":{"key":"email","value":"demo+developer@personal.ai"},"picture":{"key":"picture","value":"XY8M57SPA1SKWVJIFLVOCT3L37ERTO.jpg"}}},"owner":[{"name":"Developers of Personal AI","identity_id":138309,"domain_id":288254,"propertyBag":{"email":{"key":"email","value":"demo+developer@personal.ai"},"picture":{"key":"picture","value":"XMIU370OIQEBBG398JNWPHAE5B3LYA.jpg"}}},{"name":"Pippa Codewell, Python Developer","identity_id":138309,"domain_id":288255,"propertyBag":{"email":{"key":"email","value":"demo+developer@personal.ai"},"picture":{"key":"picture","value":"FIYMFXG2INQZQI5LA41SRNTM8YVX7Z.jpg"}}}],"follower":{"name":"Developers of Personal AI","identity_id":138309,"domain_id":0,"propertyBag":{"email":{"key":"email","value":"demo+developer@personal.ai"},"picture":{"key":"picture","value":"XY8M57SPA1SKWVJIFLVOCT3L37ERTO.jpg"}}},"source":{"type":"text","name":"WebApp","device":"desktop","propertyBag":{"source_app":{"key":"source_app","value":"Memory"}}},"participants":[{"name":"PAI Developers","identity_id":138309,"domain_id":288254,"propertyBag":{"email":{"key":"email","value":"demo+developer@personal.ai"},"picture":{"key":"picture","value":"XMIU370OIQEBBG398JNWPHAE5B3LYA.jpg"}}}],"location":null,"feed_event":[{"id":null,"name":"Python Reflection","type":null,"propertyBag":{}}],"topics":[{"value":"doc1"}],"contexts":[],"scope":"PERSONAL","visibility":"PRIVATE","internal_parent_mem_ids":["0d197c5331cc4126a63050b011265785"],"external_parent_mem_ids":[],"embedUrls":[],"scores":{},"metadata":{"title":" Python Reflection","feed_text":"This is the updated text.","request_id":"0d197c5331cc4126a63050b011265785","original_text":"<p>**Title: Reflecting on Python: My Journey Through a Language Revolution** When I first encountered Python, it was like meeting an old friend who instantly felt familiar and welcoming. I remember diving into my first Python project, a simple script to automate a repetitive task, and feeling a profound sense of relief. Here was a language that didn’t just get out of my way but actively helped me write clear, concise, and elegant code. Over the years, Python has become more than just a tool for me; it's been a companion in my journey through the world of programming. **The Allure of Simplicity** One of the things that drew me to Python was its emphasis on simplicity. The language's syntax is clean and intuitive, allowing me to focus on solving problems rather than getting bogged down in complex syntax rules. The phrase There should be one—and preferably only one—obvious way to do it,which is a guiding principle of Python, resonates deeply with me. It’s a principle that’s made my coding life smoother and more enjoyable, and I often find myself reflecting on it when tackling new challenges.**A Community Like No Other** Python’s true magic lies not just in its design but in its community. I’ve been fortunate to engage with Python’s diverse and passionate user base through forums, conferences, and local meetups. There’s a sense of camaraderie among Python developers that’s both inspiring and motivating. It’s a community that thrives on collaboration and knowledge sharing, making it easier for newcomers and seasoned developers alike to grow and contribute.</p>","is_processed":"true"},"is_session":true,"is_draft":false,"is_edited":true}
+```
+
+## Example cURL
+
+```bash cURL
+curl --location --request PUT 'https://api.personal.ai/v1/update-document?feed_id=66c6706fe6fffd040957a7a3' \
+--header 'x-api-key: <your-api-key>' \
+--header 'Content-Type: application/json' \
+--data '{
+    "Text": "<sting>",
+    "DomainName": "<string>"
+}'
+```
+
+## Error Codes
+
+| Code | Description |
+| --- | --- |
+| 503 | Authorization Failure - API key is invalid |
+```json Example Error Response
+{
+    "detail": "AI conversation api unauthorized."
+}
+```
