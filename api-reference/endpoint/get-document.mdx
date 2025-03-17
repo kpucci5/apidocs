@@ -19,7 +19,7 @@ API endpoint for retrieving a specific document or list of documents from a pers
 </ParamField>
 
 ## Query Parameters
-<ParamField header="size" type="string" required>
+<ParamField header="size" type="integer" required>
   Your desired number of documents to be returned.
 </ParamField>
 
@@ -73,8 +73,8 @@ curl --location 'https://api.personal.ai/v1/document?size=5' \
 --header 'x-api-key: <your-api-key>' \
 --header 'Content-Type: application/json' \
 --data '{
-    "Text": " Python Reflection",
-    "DomainName": "paidevelopers-python"
+    "Text": "<string>",
+    "DomainName": "<string>"
 }''
 ```
 
