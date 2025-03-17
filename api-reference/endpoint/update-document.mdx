@@ -1,6 +1,6 @@
 ---
 title: 'Update Document'
-api: 'PUT https://api.personal.ai/v1/update-document'
+api: 'PUT https://api.personal.ai/v1/update-document?feed_id=<string>'
 description: 'Update a specific docuemnt using the feed_id (document ID) of that document.'
 ---
 
@@ -42,7 +42,7 @@ API endpoint for updating a specific document in a persona's memory. This endpoi
 ## Example Request
 
 <ResponseField name="array" type="array">
-  Array of conversation messages, including both user messages and AI responses
+Array of memory blocks containing metadata about user memories including identification information, content labeling, ownership details, timestamps, and content.
 </ResponseField>
 
 ```json Example Request
