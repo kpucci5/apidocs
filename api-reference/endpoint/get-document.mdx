@@ -1,6 +1,6 @@
 ---
 title: 'Get Document'
-api: 'POST https://api.personal.ai/v1/document'
+api: 'POST https://api.personal.ai/v1/document?size=<integer>'
 description: 'Retrieve a list or specific documents from a persona. Works in conjunction with the Update Document endpoint.'
 ---
 
@@ -73,8 +73,8 @@ curl --location 'https://api.personal.ai/v1/document?size=5' \
 --header 'x-api-key: <your-api-key>' \
 --header 'Content-Type: application/json' \
 --data '{
-    "Text": "<string>",
-    "DomainName": "<string>"
+    "Text": "Python Reflection",
+    "DomainName": "paidevelopers-python"
 }''
 ```
 
