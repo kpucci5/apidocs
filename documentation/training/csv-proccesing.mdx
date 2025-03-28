@@ -1,7 +1,9 @@
 # Tips for CSV Data Processing 
 
 
-## Tips for how to format CSVs before uploading to the Persona
+## Tips for Formatting CSVs Before Uploading
+
+Here are some possible reasons why the upload might **not** work.
 
 - The total # of words in the document is over ~200,000
 - The total # of words in a row is over ~500
@@ -15,10 +17,12 @@
 - The file is XLSX format and not CSV format
 
 
-## What happens once the CSV is uploaded
+## What happens after the CSV is uploaded?
 
+Once the CSV upload is initiated, the file will undergo a preprocessing stage to ensure it's uploaded correctly. Below is a flowchart that outlines how each row is processed, broken down, and populated with natural language.
 
 ![CSV processing](/images/CSV.png)
 
+Here’s how the CSV is divided into different memory blocks in your memory stack. Each row is assigned its own block, which optimizes data retrieval when querying your spreadsheets.
 
 ![CSV memory blocks](/images/CSV2.png)
