@@ -93,25 +93,37 @@
     },
     {
       "group": "Workspace Settings",
+      "groups": [
+        {
+          "group": "Workspace Admin",
+          "pages": [
+            "documentation/settings/workspace_admin/settings-owner",
+            "documentation/settings/workspace_admin/channel-settings-owner",
+            "documentation/settings/workspace_admin/transfer-ownership-owner",
+            "documentation/settings/workspace_admin/collaborate-on-persona",
+            "documentation/settings/workspace_admin/create-new-persona",
+            "documentation/settings/workspace_admin/delete-owner-account",
+            "documentation/settings/workspace_admin/manage-persona-DM",
+            "documentation/settings/workspace_admin/removal-of-workspace-member-admin",
+            "documentation/settings/workspace_admin/settings-admin",
+            "documentation/settings/workspace_admin/transfer-ownership",
+            "documentation/settings/workspace_admin/workspace-settings",
+            "documentation/settings/workspace_admin/channel-creation",
+            "documentation/settings/workspace_admin/invite-to-chat"
+          ]
+        },
+        {
+          "group": "Workspace Member",
+          "pages": [
+            "documentation/settings/workspace_member/channel-settings-member",
+            "documentation/settings/workspace_member/settings-member"
+          ]
+        }
+      ],
       "pages": [
-        "documentation/settings/workspace_admin/settings-owner",
-        "documentation/settings/workspace_admin/channel-settings-owner",
-        "documentation/settings/workspace_admin/transfer-ownership-owner",
-        "documentation/settings/workspace_admin/collaborate-on-persona",
-        "documentation/settings/workspace_admin/create-new-persona",
-        "documentation/settings/workspace_admin/delete-owner-account",
-        "documentation/settings/workspace_admin/manage-persona-DM",
-        "documentation/settings/workspace_admin/removal-of-workspace-member-admin",
-        "documentation/settings/workspace_admin/settings-admin",
-        "documentation/settings/workspace_admin/transfer-ownership",
-        "documentation/settings/workspace_admin/workspace-settings",
-        "documentation/settings/workspace_member/channel-settings-member",
-        "documentation/settings/workspace_member/settings-member",
-        "documentation/settings/workspace_admin/channel-creation",
-        "documentation/settings/workspace_admin/invite-to-chat",
         "documentation/settings/persona-level-settings"
       ]
-    },
+    },    
     {
       "group": "Personal AI APIs",
       "pages": [
