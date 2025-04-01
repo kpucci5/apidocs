@@ -51,7 +51,7 @@
       "group": "Customizing Your AI",
       "pages": [
         "documentation/customization/persona-settings",
-        "documentation/customization/workspace_admin/persona-directive",
+        "documentation/customization/persona-directive",
         "documentation/customization/Publishing-Your-AI",
         "documentation/customization/channel-directive",
         "documentation/customization/messaging-defaults",
@@ -110,12 +110,6 @@
         "documentation/settings/workspace_admin/channel-creation",
         "documentation/settings/workspace_admin/invite-to-chat",
         "documentation/settings/persona-level-settings"
-      ]
-    },
-    {
-      "group": "Tips & Tricks",
-      "pages": [
-        "documentation/tips-and-tricks/tagging-files"
       ]
     },
     {
