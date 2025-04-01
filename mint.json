@@ -91,26 +91,26 @@
     {
           "group": "Workspace Settings - Owners/Admins",
           "pages": [
-            "documentation/settings/settings-owner",
-            "documentation/settings/channel-settings-owners",
-            "documentation/settings/transfer-ownership-owner",
-            "documentation/settings/collaborate-on-persona",
-            "documentation/settings/create-new-persona",
-            "documentation/settings/delete-owner-account",
-            "documentation/settings/manage-persona-DM",
-            "documentation/settings/removal-of-workspace-member-admin",
-            "documentation/settings/settings-admin",
-            "documentation/settings/transfer-ownership",
-            "documentation/settings/workspace-settings",
-            "documentation/settings/channel-creation",
-            "documentation/settings/invite-to-chat"
+            "documentation/settings/workspace_admin/settings-owner",
+            "documentation/settings/workspace_admin/channel-settings-owner",
+            "documentation/settings/workspace_admin/transfer-ownership-owner",
+            "documentation/settings/workspace_admin/collaborate-on-persona",
+            "documentation/settings/workspace_admin/create-new-persona",
+            "documentation/settings/workspace_admin/delete-owner-account",
+            "documentation/settings/workspace_admin/manage-persona-DM",
+            "documentation/settings/workspace_admin/removal-of-workspace-member-admin",
+            "documentation/settings/workspace_admin/settings-admin",
+            "documentation/settings/workspace_admin/transfer-ownership",
+            "documentation/settings/workspace_admin/workspace-settings",
+            "documentation/settings/workspace_admin/channel-creation",
+            "documentation/settings/workspace_admin/invite-to-chat"
           ]
         },
         {
           "group": "Workspace Settings - Member",
           "pages": [
-            "documentation/settings/channel-settings-member",
-            "documentation/settings/settings-member"
+            "documentation/settings/workspace_member/channel-settings-member",
+            "documentation/settings/workspace_member/settings-member"
           ]
         },
         {
