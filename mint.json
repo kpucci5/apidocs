@@ -92,10 +92,9 @@
       ]
     },
     {
-      "group": "Workspace Settings",
-      "groups": [
+      "navigation": [
         {
-          "group": "Workspace Admin",
+          "group": "Workspace Settings - Admin",
           "pages": [
             "documentation/settings/workspace_admin/settings-owner",
             "documentation/settings/workspace_admin/channel-settings-owner",
@@ -113,15 +112,18 @@
           ]
         },
         {
-          "group": "Workspace Member",
+          "group": "Workspace Settings - Member",
           "pages": [
             "documentation/settings/workspace_member/channel-settings-member",
             "documentation/settings/workspace_member/settings-member"
           ]
+        },
+        {
+          "group": "Workspace Settings - Persona-Level",
+          "pages": [
+            "documentation/settings/persona-level-settings"
+          ]
         }
-      ],
-      "pages": [
-        "documentation/settings/persona-level-settings"
       ]
     },    
     {
