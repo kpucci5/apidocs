@@ -62,7 +62,6 @@
     {
       "group": "Training Your AI",
       "pages": [
-        "documentation/training/training-studio",
         "documentation/training/memory-upload",
         "documentation/training/channel-upload",
         "documentation/training/memory-stack",
