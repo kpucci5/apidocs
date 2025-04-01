@@ -63,7 +63,6 @@
       "group": "Training Your AI",
       "pages": [
         "documentation/training/memory-upload",
-        "documentation/training/channel-upload",
         "documentation/training/memory-stack",
         "documentation/training/upload-library",
         "documentation/training/training-tools-in-the-document-editor",
