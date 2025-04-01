@@ -92,7 +92,7 @@
       ]
     },
     {
-          "group": "Workspace Settings - Admin",
+          "group": "Workspace Settings - Owners/Admins",
           "pages": [
             "documentation/settings/workspace_admin/settings-owner",
             "documentation/settings/workspace_admin/channel-settings-owner",
