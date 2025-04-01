@@ -92,8 +92,6 @@
       ]
     },
     {
-      "navigation": [
-        {
           "group": "Workspace Settings - Admin",
           "pages": [
             "documentation/settings/workspace_admin/settings-owner",
@@ -123,9 +121,7 @@
           "pages": [
             "documentation/settings/persona-level-settings"
           ]
-        }
-      ]
-    },    
+        },   
     {
       "group": "Personal AI APIs",
       "pages": [
