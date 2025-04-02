@@ -92,32 +92,32 @@
     {
           "group": "Workspace Settings - Owners/Admins",
           "pages": [
-            "documentation/settings/workspace_admin/settings-owner",
+            "documentation/s/workspace-settingsn/settings-owner",
             "documentation/workspace-settings/channel-settings-owners",
-            "documentation/settings/workspace-settings/transfer-ownership-owner",
-            "documentation/settings/workspace-settings/collaborate-on-persona",
-            "documentation/settings/workspace-settings/create-new-persona",
-            "documentation/settings/workspace-settings/delete-owner-account",
-            "documentation/settings/workspace-settings/manage-persona-DM",
-            "documentation/settings/workspace-settings/removal-of-workspace-member-admin",
-            "documentation/settings/workspace-settings/settings-admin",
-            "documentation/settings/workspace-settings/transfer-ownership",
-            "documentation/settings/workspace-settings/workspace-settings",
-            "documentation/settings/workspace-settings/channel-creation",
-            "documentation/settings/workspace-settings/invite-to-chat"
+            "documentation/workspace-settings/transfer-ownership-owner",
+            "documentation/workspace-settings/collaborate-on-persona",
+            "documentation/workspace-settings/create-new-persona",
+            "documentation/workspace-settings/delete-owner-account",
+            "documentation/workspace-settings/manage-persona-DM",
+            "documentation/workspace-settings/removal-of-workspace-member-admin",
+            "documentation/workspace-settings/settings-admin",
+            "documentation/workspace-settings/transfer-ownership",
+            "documentation/workspace-settings/workspace-settings",
+            "documentation/workspace-settings/channel-creation",
+            "documentation/workspace-settings/invite-to-chat"
           ]
         },
         {
           "group": "Workspace Settings - Member",
           "pages": [
-            "documentation/settings/workspace-settings/channel-settings-member",
-            "documentation/settings/workspace-settings/settings-member"
+            "documentation/workspace-settings/channel-settings-member",
+            "documentation/workspace-settings/settings-member"
           ]
         },
         {
           "group": "Workspace Settings - Persona-Level",
           "pages": [
-            "documentation/settings/persona-level-settings"
+            "documentation/workspace-settings/persona-level-settings"
           ]
         },   
     {
