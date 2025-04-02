@@ -92,7 +92,7 @@
     {
           "group": "Workspace Settings - Owners/Admins",
           "pages": [
-            "documentation/s/workspace-settingsn/settings-owner",
+            "documentation/s/workspace-settings/settings-owner",
             "documentation/workspace-settings/channel-settings-owners",
             "documentation/workspace-settings/transfer-ownership-owner",
             "documentation/workspace-settings/collaborate-on-persona",
