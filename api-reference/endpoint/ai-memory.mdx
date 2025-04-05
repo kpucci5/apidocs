@@ -1,7 +1,7 @@
 ---
 title: 'Memory API'
 description: 'Upload text memories to your memory stack'
-api: 'POST https://api.personal.ai/v1/memory'
+api: 'POST https://api.personal.ai/v2/memory'
 ---
 
 ## Overview
@@ -41,21 +41,21 @@ The Memory API enables you to create text memories programmatically in your memo
   ```
 </ParamField>
 
-<ParamField body="RawFeedText" type="string">
+<ParamField body="RawFeedText" type="string" optional>
   The formatted text that can be stored as it is
   ```json Example
   "My <b>first</b> memory with Personal AI"
   ```
 </ParamField>
 
-<ParamField body="DomainName" type="string">
+<ParamField body="DomainName" type="string" required>
   The AI persona where the memory will be uploaded. This is the prefix before .personal.ai
   ```json Example
   "ai-climbing"
   ```
 </ParamField>
 
-<ParamField body="Tags" type="string">
+<ParamField body="Tags" type="string" optional>
   Comma delimited list of tags for the memory
   ```json Example
   "pet,dog,woof woof"
