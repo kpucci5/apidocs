@@ -1,6 +1,6 @@
 ---
 title: 'AI Message'
-api: 'POST https://api.personal.ai/v1/message'
+api: 'POST https://api.personal.ai/v2/message'
 description: 'Send a message to your AI and receive a response'
 ---
 
@@ -34,7 +34,7 @@ API endpoint for interacting with your AI through messages. This endpoint allows
   ```
 </ParamField>
 
-<ParamField body="DomainName" type="string" optional>
+<ParamField body="DomainName" type="string" required>
   The domain part of the AI profile url
   ```json Example
   "DomainName": "ai"
