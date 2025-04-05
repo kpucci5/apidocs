@@ -1,6 +1,6 @@
 ---
 title: 'AI Conversation'
-api: 'POST https://api.personal.ai/v1/conversation'
+api: 'POST https://api.personal.ai/v2/conversation'
 description: 'Retrieve conversation history from a channel'
 ---
 
@@ -20,14 +20,14 @@ API endpoint for retrieving conversation history from a channel or session. This
 
 ## Body
 
-<ParamField body="DomainName" type="string" optional>
+<ParamField body="DomainName" type="string" required>
   The domain part of the AI profile url
 ```json Example Request
 "DomainName": "labs"
 ```
 </ParamField>
 
-<ParamField body="SessionId" type="string" optional>
+<ParamField body="SessionId" type="string" required>
   Session identifier to retrieve specific conversation history
 ```json Example Request
 "SessionId": "dd3ec564-5948-4da0-8ab6-94b23f92705b"
