@@ -1,6 +1,6 @@
 ---
 title: 'Upload Document'
-api: 'POST https://api.personal.ai/v1/upload-text'
+api: 'POST https://api.personal.ai/v2/upload-text'
 description: 'Upload a text document to your memory'
 ---
 
@@ -36,7 +36,7 @@ API endpoint for uploading text documents to your memory. This allows you to add
 ```
 </ParamField>
 
-<ParamField body="DomainName" type="string" optional>
+<ParamField body="DomainName" type="string" required>
   Domain name of AI Persona to upload to
   ```json Example Request
 "DomainName": "paidevelopers-comapany"
