@@ -1,6 +1,6 @@
 ---
 title: 'AI Instruction'
-api: 'POST https://api.personal.ai/v1/instruction?cmd=search'
+api: 'POST https://api.personal.ai/v2/instruction?cmd=search'
 description: 'Send instructions to your AI for specific actions'
 ---
 
@@ -40,7 +40,7 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
 ```
 </ParamField>
 
-<ParamField body="DomainName" type="string" optional>
+<ParamField body="DomainName" type="string" required>
   The domain part of the AI profile url
 ```json Example
     "DomainName": "pai-developer"
