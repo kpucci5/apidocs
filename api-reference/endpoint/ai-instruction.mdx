@@ -3,38 +3,6 @@ title: 'AI Instruction'
 api: 'POST https://api.personal.ai/v1/instruction?cmd={cmd}'
 description: 'Send instructions to your AI for specific actions'
 ---
-
-## OpenAPI
-````yaml POST /v1/instruction?cmd={cmd}
-paths:
-  path: /v1/instruction?cmd={cmd}
-  method: post
-  servers:
-    - url: https://api.personal.ai/v1
-  request:
-    security:
-      - title: Auth
-        parameters:
-          query: {}
-          header:
-            Authorization:
-              type: string
-              scheme: x-api-key
-          cookie: {}
-    parameters:
-      path:
-        Cmd:
-          schema:
-            - type: string
-              required: true
-              description: >-
-                The command you want to execute
-      query: {}
-      header: {}
-      cookie: {}
-    body: {}
-
-````
  
  ## Overview
  
