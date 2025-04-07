@@ -20,6 +20,12 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
   Must be set to application/json
 </ParamField>
 
+## Query Params
+
+<ParamField query="DomainName" type="string" required>
+  Domain name of AI Persona to upload to (e.g., "paidevelopers-python" from paidevelopers-python.personal.ai)
+</ParamField>
+
 ### File
 
 <ParamField body="file" type="File" required>
@@ -40,14 +46,6 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
   Title of the uploaded document
 ```json Example Request
 "Title": "My Document"
-```
-</ResponseField>
-
-
-<ResponseField name="DomainName" type="string" optional>
-  Domain name of AI Persona to upload to (e.g., "paidevelopers-python" from paidevelopers-python.personal.ai)
-```json Example Request
-"DomainName": "paidevelopers-python"
 ```
 </ResponseField>
 
@@ -107,7 +105,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 ### Example cURL
 
 ```bash cURL
-curl --location 'https://api.personal.ai/v1/upload-file' \
+curl --location 'https://api.personal.ai/v1/upload-file?DomainName={DomainName}' \
 --header 'x-api-key: <your-api-key>' \
 --form 'file=@"/path/to/file.pdf"' \
 --form 'message_request="{\"DomainName\": \"paidevelopers-python\", \"Title\": \"My Document\"}"'
