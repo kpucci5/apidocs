@@ -82,7 +82,8 @@
         "documentation/messaging/message-bar-features",
         "documentation/messaging/ai-controls",
         "documentation/messaging/channel-ai-controls",
-        "documentation/messaging/direct-messages-dms",
+        "documentation/messaging/channel-creation",
+        "documentation/messaging/invite-to-chat",
         "documentation/messaging/profile-page",
         "documentation/messaging/ai-mentions",
         "documentation/messaging/multi-memory"
