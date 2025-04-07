@@ -8,14 +8,16 @@ description: 'Update a specific docuemnt using the feed_id (document ID) of that
 
 API endpoint for updating a specific document in a persona's memory. This endpoint allows you make changes to the document, but it's important to note that the entire text must be passed, not just the updates as the previous content will not be reloaded in.
 
+## Authorization
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+
 ## Headers
 
 <ParamField header="Content-Type" type="string" required>
   Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
 </ParamField>
 
 ## Query Parameters
