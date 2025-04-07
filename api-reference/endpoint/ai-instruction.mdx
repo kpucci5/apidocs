@@ -24,7 +24,11 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
   * chatgpt
   * search
 ```json Example
-    "Text": "who is Einstein""
+    "https://api.personal.ai/v1/instruction?cmd=chatgpt"
+```
+
+```json Example
+    "https://api.personal.ai/v1/instruction?cmd=search"
 ```
 </ParamField>
 
@@ -33,11 +37,7 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
 <ParamField body="Text" type="string" required>
   Text instruction to send to your AI
 ```json Example
-    "https://api.personal.ai/v1/instruction?cmd=chatgpt"
-```
-
-```json Example
-    "https://api.personal.ai/v1/instruction?cmd=search"
+    "Text": "who is Einstein"
 ```
 </ParamField>
 
