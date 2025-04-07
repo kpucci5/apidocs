@@ -8,14 +8,16 @@ description: 'Retrieve a list or specific documents from a persona. Works in con
 
 API endpoint for retrieving a specific document or list of documents from a persona. This endpoint allows you to access any document by name or pulling a series of documents using the query parameters for response size.
 
+## Authorization
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+
 ## Headers
 
 <ParamField header="Content-Type" type="string" required>
   Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
 </ParamField>
 
 ## Query Parameters
