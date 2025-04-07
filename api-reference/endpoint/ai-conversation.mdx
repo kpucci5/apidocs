@@ -8,14 +8,16 @@ description: 'Retrieve conversation history from a channel'
 
 API endpoint for retrieving conversation history from a channel or session. This endpoint allows you to access previous interactions with your AI.
 
+## Authorization
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+
 ## Headers
 
 <ParamField header="Content-Type" type="string" required>
   Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
 </ParamField>
 
 ## Body
