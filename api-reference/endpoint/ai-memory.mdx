@@ -8,14 +8,16 @@ api: 'POST https://api.personal.ai/v1/memory'
 
 The Memory API enables you to create text memories programmatically in your memory stack.
 
-### Headers
-
-<ParamField header="Content-Type" type="string" required>
-  The type of content being sent. Must be `application/json`
+## Authorization
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
 </ParamField>
 
-<ParamField header="x-api-key" type="string" required>
-  Your unique API key (found in App under Settings)
+
+## Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
 </ParamField>
 
 ### Body
