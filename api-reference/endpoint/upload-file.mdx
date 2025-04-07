@@ -8,14 +8,16 @@ description: 'Upload a file to your memory'
 
 API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 
-### Headers
-
-<ParamField header="Content-Type" type="string" required>
-  Must be set to multipart/form-data
-</ParamField>
-
+## Authorization
 <ParamField header="x-api-key" type="string" required>
   Your Personal AI API key
+</ParamField>
+
+
+## Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
 </ParamField>
 
 ### File
