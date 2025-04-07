@@ -1,160 +1,151 @@
----
-title: 'AI Instruction'
-api: 'POST https://api.personal.ai/v1/instruction?cmd={cmd}'
-description: 'Send instructions to your AI for specific actions'
----
-
-## Overview
-
-API endpoint for sending specific instructions to your AI. This endpoint allows you to interact with different AI models and execute specific commands.
-
-## Authorization
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
-</ParamField>
-
-
-## Headers
-
-<ParamField header="Content-Type" type="string" required>
-  Must be set to application/json
-</ParamField>
-
-## Query Parameters
-
-<ParamField path="cmd" type="string" required>
-  * chatgpt
-  * search
-```url Example
-    https://api.personal.ai/v1/instruction?cmd=chatgpt
-```
-
-```url Example
-    https://api.personal.ai/v1/instruction?cmd=search
-```
-</ParamField>
-
-## Body
-
-<ParamField body="Text" type="string" required>
-  Text instruction to send to your AI
-```json Example
-    "Text": "who is Einstein"
-```
-</ParamField>
-
-<ParamField body="Context" type="string" optional>
-  Additional context for the instruction
-```json Example
-    "Context": "Respond in 2 sentences or less."
-```
-</ParamField>
-
-<ParamField body="DomainName" type="string" required>
-  The domain part of the AI profile url
-```json Example
-    "DomainName": "pai-developer"
-```
-</ParamField>
-
-<ParamField body="UserName" type="string" optional>
-  Name of the user sending the request
-```json Example
-    "UserName": "Leila"
-```
-</ParamField>
-
-<ParamField body="SessionId" type="string" optional>
-  Session identifier for maintaining conversation context
-```json Example
-    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6"
-```
-</ParamField>
-
-<ParamField body="SourceName" type="string" optional>
-  Source application name
-```json Example
-    "SourceName": "slack"
-```
-</ParamField>
-
-<ParamField body="is_message" type="boolean" optional>
-  Flag to indicate if the instruction should be treated as a message
-```json Example
-    "is_message": true
-```
-</ParamField>
-
-## Example Request
-
-```json Example
-{
-    "Text": "who is Einstein",
-    "Context": "Respond in two sentences or less.",
-    "DomainName": "pai-developer",
-    "UserName": "Leila",
-    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
-    "SourceName": "slack",
-    "is_message": true
-}
-```
-
-## Example Response
-
-<ResponseField name="ai_message" type="string">
-  The AI's response to the instruction
-</ResponseField>
-
-<ResponseField name="ai_score" type="number">
-  Confidence score of the AI's response
-</ResponseField>
-
-<ResponseField name="ai_name" type="string">
-  The name given to the AI persona
-</ResponseField>
-
-<ResponseField name="SessionId" type="string">
-  The Id of the conversation that was passed or automatically generated
-</ResponseField>
-
-<ResponseField name="source_app" type="string">
-  The source from which the request was initiated from as specified in the original API request
-</ResponseField>
-
-```json Example Success Response
-{
-    "ai_message": "Einstein was a renowned physicist who developed the theory of relativity. He is considered one of the most influential scientists of the 20th century.",
-    "ai_score": 95.5,
-    "ai_name": "AI Name",
-    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
-    "source_app": "api"
-}
-```
-
-## Example cURL
-
-```bash cURL
-curl --location 'https://api.personal.ai/v1/instruction?cmd=chatgpt' \
---header 'Content-Type: application/json' \
---header 'x-api-key: <your-api-key>' \
---data '{
-    "Text": "who is Einstein",
-    "UserName": "Leila",
-    "SourceName": "slack",
-    "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
-    "is_message": true
-}'
-```
-
-## Error Codes
-
-| Code | Description |
-| --- | --- |
-| 401 | Authorization Failure - API key is invalid |
-| 503 | Processing Failure - Instruction could not be processed |
-
-```json Example Error Response
-{
-    "detail": "AI instruction api unauthorized."
-}
-```
+openapi: 3.0.0
+info:
+  title: AI Instruction
+  description: |
+    Send instructions to your AI for specific actions
+    
+    ## Overview
+    API endpoint for sending specific instructions to your AI. This endpoint allows you to interact with different AI models and execute specific commands.
+  version: '1.0'
+servers:
+  - url: https://api.personal.ai
+    description: Personal AI API
+paths:
+  /v1/instruction:
+    post:
+      summary: AI Instruction
+      description: Send instructions to your AI for specific actions
+      parameters:
+        - name: cmd
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - chatgpt
+              - search
+          description: Specifies which AI model to use for processing
+          examples:
+            chatgpt:
+              value: chatgpt
+              summary: Use ChatGPT model
+            search:
+              value: search
+              summary: Use search model
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - Text
+                - DomainName
+              properties:
+                Text:
+                  type: string
+                  description: Text instruction to send to your AI
+                  example: who is Einstein
+                Context:
+                  type: string
+                  description: Additional context for the instruction
+                  example: Respond in 2 sentences or less.
+                DomainName:
+                  type: string
+                  description: The domain part of the AI profile url
+                  example: pai-developer
+                UserName:
+                  type: string
+                  description: Name of the user sending the request
+                  example: Leila
+                SessionId:
+                  type: string
+                  description: Session identifier for maintaining conversation context
+                  example: d5e9f208-937c-4a9c-92bf-5fb90ce68ff6
+                SourceName:
+                  type: string
+                  description: Source application name
+                  example: slack
+                is_message:
+                  type: boolean
+                  description: Flag to indicate if the instruction should be treated as a message
+                  example: true
+            examples:
+              default:
+                value:
+                  Text: who is Einstein
+                  Context: Respond in two sentences or less.
+                  DomainName: pai-developer
+                  UserName: Leila
+                  SessionId: d5e9f208-937c-4a9c-92bf-5fb90ce68ff6
+                  SourceName: slack
+                  is_message: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ai_message:
+                    type: string
+                    description: The AI's response to the instruction
+                  ai_score:
+                    type: number
+                    description: Confidence score of the AI's response
+                  ai_name:
+                    type: string
+                    description: The name given to the AI persona
+                  SessionId:
+                    type: string
+                    description: The Id of the conversation that was passed or automatically generated
+                  source_app:
+                    type: string
+                    description: The source from which the request was initiated from as specified in the original API request
+              examples:
+                success:
+                  value:
+                    ai_message: Einstein was a renowned physicist who developed the theory of relativity. He is considered one of the most influential scientists of the 20th century.
+                    ai_score: 95.5
+                    ai_name: AI Name
+                    SessionId: d5e9f208-937c-4a9c-92bf-5fb90ce68ff6
+                    source_app: api
+        '401':
+          description: Authorization Failure - API key is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+              examples:
+                error:
+                  value:
+                    detail: AI instruction api unauthorized.
+        '503':
+          description: Processing Failure - Instruction could not be processed
+      security:
+        - ApiKeyAuth: []
+      x-codeSamples:
+        - lang: bash
+          label: cURL
+          source: |
+            curl --location 'https://api.personal.ai/v1/instruction?cmd=chatgpt' \
+            --header 'Content-Type: application/json' \
+            --header 'x-api-key: <your-api-key>' \
+            --data '{
+                "Text": "who is Einstein",
+                "UserName": "Leila",
+                "SourceName": "slack",
+                "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
+                "is_message": true
+            }'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Your Personal AI API key
