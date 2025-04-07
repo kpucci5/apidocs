@@ -8,14 +8,16 @@ description: 'Send a message to your AI and receive a response'
 
 API endpoint for interacting with your AI through messages. This endpoint allows you to have conversations with your AI and receive responses based on your AI's training.
 
-### Headers
+## Authorization
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+
+## Headers
 
 <ParamField header="Content-Type" type="string" required>
   Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
 </ParamField>
 
 ## Body
