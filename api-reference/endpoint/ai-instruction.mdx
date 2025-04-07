@@ -109,6 +109,18 @@ API endpoint for sending specific instructions to your AI. This endpoint allows 
   Confidence score of the AI's response
 </ResponseField>
 
+<ResponseField name="ai_name" type="string">
+  The name given to the AI persona
+</ResponseField>
+
+<ResponseField name="SessionId" type="string">
+  The Id of the conversation that was passed or automatically generated
+</ResponseField>
+
+<ResponseField name="source_app" type="string">
+  The source from which the request was initiated from as specified in the original API request
+</ResponseField>
+
 ```json Example Success Response
 {
     "ai_message": "Einstein was a renowned physicist who developed the theory of relativity. He is considered one of the most influential scientists of the 20th century.",
