@@ -92,10 +92,5 @@ curl --location 'https://api.personal.ai/v1/conversation' \
 
 | Code | Description |
 | --- | --- |
-| 503 | Authorization Failure - API key is invalid |
+| 403 | Forbidden - Check that API key is invalid |
 | 404 | Not Found - Conversation or session not found |
-```json Example Error Response
-{
-    "detail": "AI conversation api unauthorized."
-}
-```
