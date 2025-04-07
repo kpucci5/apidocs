@@ -1,6 +1,6 @@
 ---
 title: 'AI Instruction'
-api: 'POST https://api.personal.ai/v1/instruction?cmd=search'
+api: 'POST https://api.personal.ai/v1/instruction'
 description: 'Send instructions to your AI for specific actions'
 ---
 
@@ -8,14 +8,16 @@ description: 'Send instructions to your AI for specific actions'
 
 API endpoint for sending specific instructions to your AI. This endpoint allows you to interact with different AI models and execute specific commands.
 
+##Authorization
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+
 ## Headers
 
 <ParamField header="Content-Type" type="string" required>
   Must be set to application/json
-</ParamField>
-
-<ParamField header="x-api-key" type="string" required>
-  Your Personal AI API key
 </ParamField>
 
 ## Query Parameters
