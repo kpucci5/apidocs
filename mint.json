@@ -92,6 +92,7 @@
     {
           "group": "Workspace Settings - Owners/Admins",
           "pages": [
+            "documentation/workspace-settings/log-in",
             "documentation/workspace-settings/settings-owner",
             "documentation/workspace-settings/channel-settings-owners",
             "documentation/workspace-settings/transfer-ownership-owner",
