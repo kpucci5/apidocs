@@ -137,10 +137,12 @@
       "group": "Release Notes",
       "pages": [
         "release-notes/index",
+        "release-notes/updates/april",
+        "release-notes/updates/march",
         "release-notes/updates/january",
         "release-notes/updates/february",
-        "release-notes/updates/march",
-        "release-notes/updates/april"
+
+
       ]
     }
   ],
