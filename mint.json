@@ -133,8 +133,14 @@
         "api-reference/endpoint/update-document"
       ]
     },
-    {
+        {
       "group": "Release Notes",
+      "pages": [
+        "release-notes/index"
+      ]
+    },
+    {
+      "group": "Updates",
       "pages": [
         "release-notes/index",
         "release-notes/updates/april",
