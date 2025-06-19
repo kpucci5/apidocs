@@ -51,7 +51,6 @@
     {
       "group": "Customizing Your AI",
       "pages": [
-        "documentation/customization/persona-settings",
         "documentation/customization/persona-directive",
         "documentation/customization/publishing-your-ai",
         "documentation/customization/channel-directive",
@@ -80,19 +79,15 @@
       "pages": [
         "documentation/messaging/new-message",
         "documentation/messaging/message-bar-features",
-        "documentation/messaging/ai-controls",
-        "documentation/messaging/channel-ai-controls",
         "documentation/messaging/channel-creation",
         "documentation/messaging/invite-to-chat",
         "documentation/messaging/profile-page",
-        "documentation/messaging/ai-mentions",
         "documentation/messaging/multi-memory"
       ]
     },
     {
           "group": "Workspace Settings - Owners/Admins",
           "pages": [
-            "documentation/workspace-settings/log-in",
             "documentation/workspace-settings/settings-owner",
             "documentation/workspace-settings/channel-settings-owners",
             "documentation/workspace-settings/transfer-ownership-owner",
