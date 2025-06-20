@@ -11,6 +11,21 @@ Personal AI helps you create and train customized AI personas that learn from yo
 
 <AccordionGroup>
 
+<Accordion title="June 18 2025 - Fixed Formatting Issues & Improved Feature Flags">
+
+Bug Fixes
+- Workspace Query Issue: Resolved a bug where the query for fetching available workspaces returned only a single result. Users will now see all workspaces they have access to.
+- Channel Conversation Starter Persona: Fixed an issue where conversation starters in channels were not using the designated persona. Starters will now properly reflect the assigned persona.
+- Conversation Starters – Edit Before Send (Channels): Fixed a bug where the "Edit Before Send" option did not apply correctly in channels.
+- Conversation Starters Overwritten: Addressed an issue where saving a new conversation starter would overwrite previously saved starters. You can now add multiple starters without losing existing ones.
+- Formatting Issues: HTML formatting is now preserved when conversation starters are shown in the message bar.
+- Auto-replies: Corrected behavior where messages sent in channels triggered auto-replies in DMs instead of the channel.
+
+Backend Changes & Improvements
+- Feature Flag for Integrations: A new backend-controlled feature flag has been introduced to manage the rollout and availability of integrations.
+
+ </Accordion>
+
 <Accordion title="June 11 2025 - Fixed Deletion Function & Improved Audit Logging">
 
 - Account Deletion Restored: Users can once again delete their accounts directly from the Personal AI interface, giving them more control over their data and privacy.
