@@ -44,8 +44,7 @@
       "group": "Getting Started",
       "pages": [
         "documentation/getting-started/introduction",
-        "documentation/getting-started/navigating-personal-ai",
-        "documentation/workspace-settings/workspace-settings"
+        "documentation/getting-started/navigating-personal-ai"
       ]
     },
     {
