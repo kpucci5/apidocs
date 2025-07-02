@@ -143,6 +143,7 @@
     {
       "group": "Updates",
       "pages": [
+        "release-notes/updates/july",
         "release-notes/updates/june",
         "release-notes/updates/may",
         "release-notes/updates/april",
