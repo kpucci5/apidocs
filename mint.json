@@ -49,6 +49,12 @@
       ]
     },
     {
+      "group": "Tips and Tricks",
+      "pages": [
+        "documentation/tips-and-tricks/tagging-files"
+      ]
+    },
+    {
       "group": "Customizing Your AI",
       "pages": [
         "documentation/customization/persona-directive",
