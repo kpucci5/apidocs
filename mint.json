@@ -84,6 +84,7 @@
       "group": "Messaging Your AI",
       "pages": [
         "documentation/messaging/new-message",
+        "documentation/messaging/conversation-starters",
         "documentation/messaging/message-bar-features",
         "documentation/messaging/channel-creation",
         "documentation/messaging/invite-to-chat",
