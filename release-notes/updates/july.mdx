@@ -11,7 +11,20 @@
 - Package Updates: Updated frontend dependencies and packages
 - UI Event Tracking: Added UI events integration to notification services
 - Environment Configuration: Implemented application ROLES environment variable
+- Clear Formatting in AI Responses: Users can now remove all formatting from AI-generated responses, providing a cleaner and more customizable reading experience.
+- Terms of Service Agreement Prompt: A new flow requires users to explicitly review and agree to the Terms of Service before continuing.
+- ID Support for QA Engineers: The application now includes unique IDs to support automated testing and validation by QA engineers.
+- CropperJS Upgrade: CropperJS was upgraded to resolve breaking changes and maintain compatibility with other components.
 
 #### Bug Fixes
 - Persona Creation Fix: Resolved critical issue where personas could not be created due to save functionality not working
 - Workspace Loading: Fixed workspace loading issues affecting user experience
+- Account Name Overlap/Truncation: Fixed an issue where long account names would overlap or become truncated in the UI.
+- Display Full Email on Unknown Mentions: The mobile view now correctly displays full email addresses when mentioning unrecognized users.
+- Pagination Loop in Settings > Members/Personas Tab: Resolved an issue that caused an infinite pagination loop in the Settings > Members/Personas tab.
+- Auto-send Without AI Reply in Conversation Starters: Addressed a problem where messages were being auto-sent without waiting for an AI reply when triggered from the conversation starters.
+- Pagination Issue in Upload History: Fixed a front-end issue that disrupted pagination in the Upload History view.
+- WorkspaceID Always Returning 0: The backend now correctly returns the appropriate WorkspaceID, instead of always returning 0.
+- Duplicate Messaging Route Consolidation: Merged duplicate API routes related to messaging to reduce redundancy and improve maintainability.
+- Cannot Delete Workspace (Security Fix): A critical bug that prevented workspace deletion has been resolved.
+- is_final Not Returned Correctly During Stream: Fixed a backend issue where the is_final field was not being correctly returned during streaming events.
