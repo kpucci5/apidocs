@@ -52,8 +52,9 @@ The Memory API enables you to create text memories programmatically in your memo
 
 <ParamField body="DomainName" type="string" required>
   The hyphenated text below the AI's name when clicked into a Persona.
+<img alt="DomainName" classname="block dark:hidden" src="/images/domainname.png" />
   ```json Example
-  "ai-climbing"
+  "product-demo-jebzrhw"
   ```
 </ParamField>
 
@@ -81,6 +82,7 @@ curl --location 'https://api.personal.ai/v1/memory' \
 --header 'x-api-key: {{user_api_key}}' \
 --data '{
     "Text": "my cat is born in #2000",
+    "DomainName": "product-demo-jebzrhw",
     "RawFeedText": "My <b>cat</b> is born in <b>2000</b>",
     "CreatedTime": "Wed, 19 Sep 2023 13:31:00 PDT",
     "SourceName": "Twitter",
