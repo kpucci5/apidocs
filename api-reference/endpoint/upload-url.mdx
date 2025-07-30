@@ -38,8 +38,9 @@ API endpoint for uploading content from URLs to your memory. Supports various ty
 
 <ParamField body="DomainName" type="string" required>
   The hyphenated text below the AI's name when clicked into a Persona.
+<img alt="DomainName" classname="block dark:hidden" src="/images/domainname.png" />
    ```json Example Request
-  "DomainName": "paidevelopers-company"
+  "DomainName": "product-demo-jebzrhw"
   ```
 </ParamField>
 
@@ -75,7 +76,7 @@ API endpoint for uploading content from URLs to your memory. Supports various ty
 {
     "Url": "https://www.youtube.com/watch?v=-9F20HckH8w",
     "Title": "Personal AI Company Overview (2024)",
-    "DomainName": "paidvelopers-company",
+    "DomainName": "product-demo-jebzrhw",
     "Tags": "personal ai,youtube,company,overview",
     "is_stack": true,
     "StartTime": "2024-10-09T10:00:00.000Z",
@@ -110,7 +111,7 @@ curl --location 'https://api.personal.ai/v1/upload-url' \
 --data '{
     "Url": "https://personal.ai",
     "Title": "Personal AI",
-    "DomainName": "ai",
+    "DomainName": "product-demo-jebzrhw",
     "is_stack": false
 }'
 ```
