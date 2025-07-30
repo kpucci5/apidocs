@@ -52,8 +52,9 @@ description: 'Send instructions to your AI for specific actions'
  
  <ParamField body="DomainName" type="string" required>
     The hyphenated text below the AI's name when clicked into a Persona.
+<img alt="DomainName" classname="block dark:hidden" src="/images/domainname.png" />
  ```json Example
-     "DomainName": "pai-developer"
+     "DomainName": "product-demo-jebzrhw"
  ```
  </ParamField>
  
@@ -91,7 +92,7 @@ description: 'Send instructions to your AI for specific actions'
  {
      "Text": "who is Einstein",
      "Context": "Respond in two sentences or less.",
-     "DomainName": "pai-developer",
+     "DomainName": "product-demo-jebzrhw",
      "UserName": "Leila",
      "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
      "SourceName": "slack",
@@ -140,6 +141,7 @@ description: 'Send instructions to your AI for specific actions'
  --data '{
      "Text": "who is Einstein",
      "UserName": "Leila",
+     "DomainName": "product-demo-jebzrhw",
      "SourceName": "slack",
      "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
      "is_message": true
