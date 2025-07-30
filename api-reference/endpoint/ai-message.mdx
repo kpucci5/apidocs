@@ -38,8 +38,9 @@ API endpoint for interacting with your AI through messages. This endpoint allows
 
 <ParamField body="DomainName" type="string" required>
   The hyphenated text below the AI's name when clicked into a Persona.
+<img alt="DomainName" classname="block dark:hidden" src="/images/domainname.png" />
   ```json Example
-  "DomainName": "ai"
+  "DomainName": "product-demo-jebzrhw"
   ```
 </ParamField>
 
@@ -89,7 +90,7 @@ API endpoint for interacting with your AI through messages. This endpoint allows
 {
     "Text": "What is an SLM?",
     "Context": "Reply in one sentence.",
-    "DomainName": "ai",
+    "DomainName": "product-demo-jebzrhw",
     "UserName": "Leila",
     "SessionId": "d5e9f208-937c-4a9c-92bf-5fb90ce68ff6",
     "Events": "How to train your AI",
@@ -145,6 +146,7 @@ curl --location 'https://api.personal.ai/v1/message' \
 --header 'x-api-key: <your-api-key>' \
 --data '{
     "Text": "What is an SLM?",
+    "DomainName": "product-demo-jebzrhw",
     "UserName": "Leila",
     "SourceName": "slack",
     "is_draft": true,
