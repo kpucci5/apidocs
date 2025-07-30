@@ -29,8 +29,9 @@ API endpoint for retrieving a specific document or list of documents from a pers
 
 <ParamField body="DomainName" type="string" required>
   The hyphenated text below the AI's name when clicked into a Persona.
+<img alt="DomainName" classname="block dark:hidden" src="/images/domainname.png" />
 ```json Example Request
-"DomainName": "paidevelopers-python"
+"DomainName": "product-demo-jebzrhw"
 ```
 </ParamField>
 
@@ -50,7 +51,7 @@ API endpoint for retrieving a specific document or list of documents from a pers
 ```json Example Request
 {
   "Text": "Python Reflection",
-  "DomainName": "paidevelopers-python"
+  "DomainName": "product-demo-jebzrhw"
 }
 ```
 
@@ -76,7 +77,7 @@ curl --location 'https://api.personal.ai/v1/document?size=5' \
 --header 'Content-Type: application/json' \
 --data '{
     "Text": "Python Reflection",
-    "DomainName": "paidevelopers-python"
+    "DomainName": "product-demo-jebzrhw"
 }''
 ```
 
