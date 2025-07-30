@@ -24,6 +24,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 
 <ParamField query="DomainName" type="string" required>
   The hyphenated text below the AI's name when clicked into a Persona.
+<img alt="DomainName" classname="block dark:hidden" src="/images/domainname.png" />
 </ParamField>
 
 ### File
@@ -37,7 +38,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 </ParamField>
 
 ```json Example message_request
-{"DomainName": "ai", "Title": "Uploaded Files"}
+{"DomainName": "product-demo-jebzrhw", "Title": "Uploaded Files"}
 ```
 
 ### Body
@@ -108,7 +109,7 @@ API endpoint for uploading files (PDF, DOCX, etc.) to your Personal AI memory.
 curl --location 'https://api.personal.ai/v1/upload-file?DomainName={DomainName}' \
 --header 'x-api-key: <your-api-key>' \
 --form 'file=@"/path/to/file.pdf"' \
---form 'message_request="{\"DomainName\": \"paidevelopers-python\", \"Title\": \"My Document\"}"'
+--form 'message_request="{\"DomainName\": \"product-demo-jebzrhw\", \"Title\": \"My Document\"}"'
 ```
 
 ### Error Codes
