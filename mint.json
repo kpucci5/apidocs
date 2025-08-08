@@ -52,7 +52,8 @@
       "group": "Tips and Tricks",
       "pages": [
         "documentation/tips-and-tricks/tagging-files",
-        "documentation/tips-and-tricks/prompting"
+        "documentation/tips-and-tricks/prompting",
+        "documentation/tips-and-tricks/toolbar"
       ]
     },
     {
