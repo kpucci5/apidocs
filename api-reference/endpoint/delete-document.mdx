@@ -1,0 +1,95 @@
+---
+title: 'Delete Document'
+api: 'DELETE https://api.personal.ai/v1/delete-document?feed_id=<string>'
+description: 'Delete a specific docuemnt using the feed_id (document ID) of that document.'
+---
+
+## Overview
+
+API endpoint for deleting a specific document in a persona's memory.
+
+## Authorization
+<ParamField header="x-api-key" type="string" required>
+  Your Personal AI API key
+</ParamField>
+
+
+## Headers
+
+<ParamField header="Content-Type" type="string" required>
+  Must be set to application/json
+</ParamField>
+
+<ParamField header="worksapce_id" type="string" required>
+  Your Personal AI workspace id
+</ParamField>
+
+<ParamField header="identity_id" type="string" required>
+  Your Personal AI identity id
+</ParamField>
+
+<ParamField header="resource_id" type="string" required>
+  Your Personal AI resource id. This is the id of the persona that contains the document you want to delete.
+</ParamField>
+
+## Query Parameters
+<ParamField query="feed_id" type="string" required>
+  The ID associated with tthe document you want to delete. This can be retrieved using the Get Document endpoint.
+</ParamField>
+
+## Body
+
+<ParamField body="Text" type="string" required>
+  Anything can be passed here.
+```json Example Request
+"Text": "text"
+```
+</ParamField>
+
+<ParamField body="DomainName" type="string" required>
+  The hyphenated text below the AI's name when clicked into a Persona.
+<img alt="DomainName" classname="block dark:hidden" src="/images/domainname.png" />
+```json Example Request
+"DomainName": "product-demo-jebzrhw"
+```
+</ParamField>
+
+
+## Example Request
+
+<ResponseField name="array" type="array">
+Array of memory blocks containing metadata about user memories including identification information, content labeling, ownership details, timestamps, and content.
+</ResponseField>
+
+```json Example Request
+{
+  "Text": "test",
+  "DomainName": "product-demo-jebzrhw"
+}
+```
+
+## Example cURL
+
+```bash cURL
+curl --location --request DELETE 'https://api.personal.ai/v1/delete-document?feed_id=66c6706fe6fffd040957a7a3' \
+--header 'x-api-key: <your-api-key>' \
+--header 'workspace_id: <your-workspace-id>' \
+--header 'identity_id: <your-identity-id>' \
+--header 'resource_id: <your-persona's-resource-id>' \
+--header 'Content-Type: application/json' \
+--data '{
+    "Text": "<string>"
+    "DomainName": "<string>"
+}'
+```
+
+## Error Codes
+
+| Code | Description |
+| --- | --- |
+| 503 | Authorization Failure - API key is invalid |
+```json Example Error Response
+{
+    "detail": "AI conversation api unauthorized."
+}
+```
