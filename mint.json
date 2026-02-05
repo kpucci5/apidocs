@@ -59,7 +59,7 @@
     {
       "group": "Customizing Your AI",
       "pages": [
-        "documentation/customization/persona-directive",
+        "documentation/customization/persona-settings",
         "documentation/customization/publishing-your-ai",
         "documentation/customization/channel-directive",
         "documentation/customization/messaging-defaults",
