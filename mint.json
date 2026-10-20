@@ -145,13 +145,14 @@
     {
       "group": "Updates",
       "pages": [
-        "release-notes/updates/july",
-        "release-notes/updates/june",
-        "release-notes/updates/may",
-        "release-notes/updates/april",
-        "release-notes/updates/march",
-        "release-notes/updates/february",
-        "release-notes/updates/january"
+        "release-notes/updates/july2025",
+        "release-notes/updates/june2025",
+        "release-notes/updates/may2025",
+        "release-notes/updates/april2025",
+        "release-notes/updates/march2025",
+        "release-notes/updates/february2025",
+        "release-notes/updates/january2025",
+        "release-notes/updates/september2026",
       ]
     }
   ],
