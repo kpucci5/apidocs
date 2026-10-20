@@ -35,7 +35,7 @@
       "url": "api-reference"
     },
     {
-      "name": "Overview",
+      "name": "Release Notes",
       "url": "release-notes"
     }
   ],
@@ -137,7 +137,7 @@
       ]
     },
         {
-      "group": "Release Notes",
+      "group": "Overview",
       "pages": [
         "release-notes/index"
       ]
