@@ -1,3 +1,64 @@
 ---
 title: October 2026
 ---
+
+## New Features
+- **Personal AI Launches**: The baseline product — create AI agents that talk over chat, voice, or phone/text, remember what you tell them, and take action on your behalf, with documents, web search, diagrams, Google integration, skills, team roles, and an admin console all included.
+- **Deeper Google Integration**: Manage which Google account is connected (and disconnect it), read a Drive file directly into a conversation without saving a copy, point your agent at a specific calendar by name, and share files with known contacts just by name.
+- **The Vocabulary Screen**: A single screen for managing everything your agent tracks — consistently called kinds, fields, and connections — including where each kind of information is stored, naming-conflict checks, and a "try a sentence" test against memory without storing anything.
+- **Business-Owned & Multi-Purpose Agents**: Onboarding can now build an agent for a whole business, not just a person — complete with its own workspace, a receptionist line that shares the business's catalogue by default, and a document-upload step that feeds the agent's knowledge base directly.
+- **Onboarding Testing Tools**: Rehearse an onboarding flow as a scripted person, or replay real conversations, and get a verdict and build preview before anything is trusted live — plus a lighter dry-run option.
+- **Onboarding Export/Import**: Move an onboarding flow, with its templates and vocabulary, between workspaces, resolving any differences one by one before anything is written.
+- **Redesigned Onboarding Page**: Business branding, question-by-question progress, the right input type per question, relevant file uploads, and a live, directly-editable summary.
+- **Custom Onboarding Branding & Wording**: Give each onboarding its own name, badge, and look, and let it phrase questions in the agent's own words instead of a fixed script.
+- **Call Forwarding Setup**: A new onboarding step walks you through forwarding your existing phone number to your new agent's line, with the exact carrier code to dial and automatic confirmation once a call comes through.
+- **Centralized Caller Permissions**: What a phone-line agent can and can't tell callers is now managed in one place.
+- **Template & Memory Versioning**: See which template version an agent was built from and whether it's fallen behind, and track which version of the memory system each agent is running — with a one-click upgrade in the admin console that snapshots your data first.
+- **WhatsApp Channel & Calls**: Connect a WhatsApp Business Account for messaging and voice calls, with Meta's consent flow and a daily call limit handled automatically.
+- **WhatsApp Data Controls & Management**: Configurable data retention, contact-level erasure, and a full admin management panel — plus a status summary and paged view for businesses with large numbers of WhatsApp lines.
+- **Clearer Confirmations**: A pending action your agent wants to take now shows as a full card with Confirm/Cancel buttons right in chat, and a text message proposing an action includes a direct confirmation link for each one.
+- **Email Attachments**: Your agent can now see and read attachments on emails, not just the message body, across every agent template.
+- **Trusted by Phone Number**: Texting or calling from a number already on file as yours is recognized as you, going straight into your agent's own memory instead of being treated as a stranger's message. *(For now this relies on caller ID alone; stronger verification for unrecognized numbers is still planned.)*
+
+## Enhancements
+- **Real Time Zones Everywhere**: Your agent uses your actual time zone for "today"/"tomorrow," accurate daily mail windows, and full-calendar meeting search.
+- **Vocabulary Field Controls**: Fields belong to a specific kind (with shared fields labeled), can be reordered, show how many records would be affected by a required-field change, and group your own fields separately from built-ins when picking one.
+- **Retire Instead of Delete**: Once a kind is in use, it's retired rather than deleted, with its name and field types locked.
+- **Smarter Connecting & Drafting**: Connecting two kinds lets you search, reuse, or create on the spot, and a "magic wand" drafts a kind's description or examples for you to edit.
+- **Vocabulary Follows Templates**: Agent templates and bundles now carry their own vocabulary, and a business's defined products are automatically included in its catalogue.
+- **Cleaner Onboarding Flow**: Steps run in a predictable order, a single message can capture a full list of answers at once, setup small talk no longer pollutes real memory, and ordering a phone number waits until the agent is fully built. The onboarding summary card also reads from the actual built workspace rather than a stale snapshot, with each card's access scoped to just one agent.
+- **Smoother Mobile Onboarding**: No more early keyboard pop-up, lost page position, or mismatched keyboard type mid-question.
+- **Resilient Inbox & Mail Sync**: Background sync hiccups — including after inactivity — are automatically detected and repaired, or fall back to live mail; newly connected mailboxes auto-backfill their history; sync failures now surface on a mailbox's health status; a single deleted Gmail message no longer breaks a whole sync batch; and you're told to disable one mailbox if Gmail and Outlook are both connected at once.
+- **Safer Receptionist Lines**: A receptionist (answers for strangers) is now strictly separated from an agent's full configuration (answers only for its owner); WhatsApp receptionists reply in text-appropriate language automatically.
+- **Private WhatsApp History & Consolidated Alerts**: WhatsApp history is private by default, even from Personal AI operators, and security-key alerts now live in one place.
+- **WhatsApp Moves Into Phone**: Managing a number's WhatsApp connection (connect, switch agent, disconnect) now lives directly in the Phone tab next to your other numbers, instead of a separate WhatsApp tab.
+- **Better Mail Search & Accuracy**: Searching by sender, subject line, or a specific day all work more reliably, BCC'd recipients on Outlook/Microsoft 365 threads are included when listing who's on a conversation, email timestamps are computed in your correct local time, and empty search results, sorting, and shared drive names are all handled properly.
+- **Confirm Before Rescheduling Conflicts**: Rescheduling something that conflicts with an existing commitment now asks you to confirm first.
+- **More Honest Scheduling Language**: Your agent no longer describes a calendar booking as "set" or "booked" before you've actually confirmed it.
+- **Goal Tracking, Actually Working**: A long-standing bug meant your agent's open goals (things it's tracking to follow up on) weren't being read when deciding what to do next — they are now. Stale goals fade out properly, and forgetting a person also clears any goals tied to them.
+- **Conversation Gap Awareness**: Your agent now knows how long it's been since your last message, and says so when it's been more than a day.
+- **Identity for Everyone on the Line**: Team members, operators, and callers — not just the primary owner — now get their own identity record, so something like "call me Robert" is remembered correctly for the right person.
+- **Larger File & Full Email Reading**: The file-size limit for reading documents was raised, and reading a single email no longer cuts off after the first paragraph.
+- **File Sharing Fixes**: Sharing now accepts a plain, typed-out email address like mail and calendar already did, and sharing with someone outside your organization no longer gets wrongly reported as a broken connection.
+- **Per-Agent Confirmation Inbox**: If you operate more than one agent, each now has its own confirmation link and inbox, instead of one shared link mixing every agent's pending actions together.
+- **Cleaner Email Attachments**: Failed attachment processing now retries instead of silently giving up, and HTML-formatted emails are cleaned up instead of showing raw markup.
+- **Admin Console Fixes**: A recipe assigned to one agent can now be returned to the shared workspace, and vocabulary pickers in the step editor are no longer empty.
+
+## Bug Fixes
+- **List Handling Fixed**: Removing list items now matches the exact numbers you actually see, and lists no longer create near-duplicate memories of something already tracked.
+- **Onboarding Reliability Overhaul**: Onboarding could repeat questions, falsely confirm an answer was saved, or ask "anything else?" indefinitely — every gathering turn now reliably records, closes, finishes, or notes a decline. Read-backs and "what building will do" are now generated directly from what was recorded rather than re-described by the model, which previously could claim a connection existed before it did.
+- **Onboarding Build Fixes**: Runs that ordered a phone number no longer get permanently stuck, numbers route to the correct owner after handover, and vocabulary a live flow depends on can no longer be deleted out from under it.
+- **Memory Accuracy Fixes**: Statements like "Anna ordered two bags of sugar" are no longer wrongly discarded; an ambiguous new name (e.g. "tart" next to "banana" and "lemon") is no longer silently dropped — your agent now asks which one you meant; and a race condition that could duplicate or drop a record's field is resolved.
+- **Contact & Caller Fixes**: Sending to a contact with multiple saved addresses, recognizing a returning caller instead of creating a duplicate account, and matching callers only by phone number (never name alone) are all fixed.
+- **Phone & Voice Fixes**: The scripted phone greeting no longer mistakes a missed or busy call for "you called earlier," bare phone-number answers are read correctly, and short trailing clauses are no longer spoken in isolation.
+- **Mail & Calendar Timestamp Fixes**: Email timestamps and relative time phrases (like "in 10 minutes") now use the correct time and zone, Microsoft 365 unread counts are read correctly, date-bounded mail searches no longer leak out-of-range results, recurring-event searches no longer miss near-term matches, and replying to an email with just a greeting (e.g. "Thanks!") no longer strips the quoted original message.
+- **WhatsApp Fixes**: New connections no longer show zero numbers right after setup, and the management panel correctly refreshes its status after actions.
+- **Onboarding-Google Link Fix**: Connecting Google during onboarding now properly links to the newly created agent and opens the right workspace.
+- **"What's My Name" Fixed**: Asking your agent your own name could return a stale or incorrect answer from memory; it now reports your actual connected-account name correctly.
+- **Confirmation Pipeline Overhaul**: A series of fixes closed cases where a confirmed action (forwarding an email, canceling or updating a calendar invite, sharing a file, disconnecting an account) could be wrongly reported as failed after it had actually succeeded; where an unrelated new message could be misread as a correction to a pending confirmation and silently dropped; where canceling a vaguely-referenced meeting (e.g. "cancel it") could act without real certainty about which event was meant; and where confirming via a text-message link didn't always clear the "awaiting confirmation" indicator in chat.
+- **Calendar Invite Wrong-Person Fix**: Adding someone to a calendar event by name could occasionally invite a different, similarly-matched person; your agent now double-checks the name first, the same safeguard already used for email.
+- **Bad Meeting-Time Suggestions Fix**: Finding an available meeting time no longer uses the server's time zone by mistake, and daytime slots on later days are no longer crowded out by overnight hours.
+- **"Most Recent Files" Search Fix**: Asking for your most recent files could silently run a narrower, top-level-only search instead of your full Drive — it now searches everything as intended.
+- **Attachment Opening Failure Fix**: Opening an email attachment could report the connection as "down" even when it actually worked or failed for an unrelated reason.
+- **Connected-Account Fixes**: A Microsoft work/school account could show a blank name, and a properly connected Google or Microsoft account could incorrectly report that it wasn't serving any features — both fixed.
+- **Security**: Addressed an issue identified during a routine security assessment. *(This item is thin on specifics in the source record — worth confirming details before this goes out externally.)*
