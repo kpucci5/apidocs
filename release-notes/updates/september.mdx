@@ -1,0 +1,26 @@
+
+### New Features
+- **Personal Assistant Built-In Template**: Ships as a ready-made agent template with calendar, file, and voice access included by default.
+- **Live Web Search**: Agents can search the live web to answer questions with up-to-date information.
+- **Diagram Generation**: Agents can generate diagrams and graphics as part of a chat reply.
+- **Google Integration, First Cut**: Initial support for Gmail, Calendar, and Drive connects to agents.
+- **Onboarding Hand-Over**: Each person who completes an invite now gets their own private session and a personal key scoped to just their own agent.
+- **Skills Panel**: The admin console gains a dedicated panel for managing skills, with per-agent grouping and limits.
+- **Outlook/Microsoft 365 Support, Early**: Mail support begins alongside Gmail.
+- **Confirm-Before-Send**: Agents with a connected Google account can propose sending an email, but every send requires explicit confirmation first.
+- **Executive Assistant Template**: Re-introduced template for agents built to manage email and scheduling.
+- **Full Onboarding Flow**: Setup now runs through guided stages — identity, agent name, business details — ending with a read-back before anything is built, with a dedicated page for each onboarded person.
+- **Expanded Phone Number Availability**: Numbers from additional regions, including Indonesia, can now be provisioned.
+
+### Enhancements
+- **Accent-Insensitive Name Matching**: Searching for a name now ignores accents and diacritics.
+- **Clearer Recall Labeling**: Your agent now refers to a recalled subject by its actual name, not an internal reference.
+- **Mailbox vs. Person Distinction**: An inbox and the person who owns it are no longer treated as the same thing in memory.
+- **Automatic Number Compliance**: A phone number now registers for SMS compliance automatically once it's attached to an agent.
+- **Longer Conversation Handling**: Memory processing now handles longer, document-like conversations without losing track partway through.
+- **Private SMS/Call Memory**: Asking your agent to "remember this" over text or call now saves privately to that line's own inbox, unreadable by other callers.
+- **Template Versioning Groundwork**: Templates now carry their own automations and begin tracking version history.
+- **Faster Outlook Sync**: Real-time change notifications replace polling for Microsoft 365 mail, alongside fixes for long emails.
+
+### Bug Fixes
+- **Dangling Phone Lines on Delete**: Deleting an agent no longer leaves its phone line attached instead of releasing it.
