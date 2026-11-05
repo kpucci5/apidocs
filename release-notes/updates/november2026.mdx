@@ -1,0 +1,52 @@
+# Personal AI Release Summary — November 2026
+
+## New Features
+- **Relation Proposals**: When your agent isn't sure how two things relate to each other, it now asks you directly instead of guessing — and if you decline, it won't ask the same thing again.
+- **Reliable Browser Voice Calls**: Browser-based voice calls now work reliably from behind strict networks or firewalls, via a relay connection, with an automatic fallback to the regular connection method if needed.
+- **Visitor Side in Templates**: A template can now carry its own caller-facing side — rules, openings, skills, and tools for callers — alongside the usual owner side. A new assistant built from that template starts with that caller-facing setup instead of a blank receptionist, and template upgrades carry those updates forward without overwriting your own customizations.
+- **Owner/Visitor Switch in the Agent Editor**: Any assistant with a phone line now has an Owner | Visitor switch in its editor, letting you edit the caller-facing side from the same screens, including on carrier-provided lines.
+- **Custom Order Types**: Workspaces can now build their own custom version of an "order" kind, instead of the built-in Order type being a dead end.
+- **Computed Fields**: Any field on any kind can now be calculated automatically from a formula — counting or summing across linked records, pulling values from a related item, or basic math — either calculated once and kept, or kept live as things change. A business can also override a built-in computed field (like an order's total) with its own version, and revert back without losing data.
+- **Order Totals, Done Automatically**: Orders now automatically track when they were placed, item count, and total price the moment they're filed, with quantities tracked per line item and currency handled correctly (a mixed-currency order is left with no total rather than a wrong one).
+
+## Enhancements
+- **Memory v3**: The underlying memory system was upgraded again — agents running an older version show a "behind" banner with a one-click upgrade that snapshots your data first. **Note:** goal tracking (introduced in October) is temporarily turned off as part of this upgrade while its behavior is reviewed.
+- **More Reliable Fact-Catching**: When your agent doesn't catch anything from what you said (e.g. "I'm Katelyn" or "I have a mom"), it now takes a second, more careful pass instead of giving up.
+- **Correct Name Attribution**: Saying "her name is Jess" after mentioning "I have a friend" now correctly names the friend, instead of accidentally renaming you, the owner.
+- **Catalogue Awareness for Every Owner**: Your own assistant now keeps track of your shop's catalogue even if it isn't formally set up to act for the business.
+- **Items Restocked Are Back on the Menu**: Mentioning that a discontinued item is being sold again now actually puts it back on the menu, not just marks it available.
+- **Smarter Multi-Fact Handling**: Two updates to the same item in one message no longer conflict — descriptive details add up, while a specific value (like a price) takes the most recent one stated.
+- **Accurate Price Parsing**: Prices using a dot as a thousands separator now parse correctly (e.g. 5.500 IDR is read as 5,500, not 5.50).
+- **Stock Counts Preserved**: Saying something like "fresh batch of 16 buns" now keeps the actual count instead of just marking the item "in stock."
+- **Personal Lines Share the Right Catalogue**: Your own personal line now tells callers about the shop you own, instead of refusing to answer catalogue questions outright. (Owners with more than one shop still don't get catalogue answers on their personal line, by design.)
+- **Business Name Matching Fixed**: Setting which business an agent acts for now matches the business's name as you actually wrote it, instead of requiring an exact internal match.
+- **Live Number Readiness Status**: Whether a phone number's calls and texts are fully active yet is now shown per line.
+- **Mail Threading & Cc Fixed**: Replying with a draft now threads properly into the same conversation, and Cc'd recipients stay on Cc.
+- **Clearer Time Zone Phrasing**: Named time zones (like Pacific or UTC) are now stated explicitly so your agent doesn't mix them up.
+- **Complete Mail Results**: A mail search covering many results no longer silently drops rows to stay under an internal size limit.
+- **Longer Relay Connections for Voice**: The relay connection behind browser voice calls now lasts a full day instead of about 10 minutes, so long calls no longer lose their connection partway through.
+- **Optional Call Noise Reduction**: A new noise-reduction option for voice calls is available (off by default), with before/after audio available for review in call tracing.
+- **No More Fake Transcription Notices**: You no longer hear a "transcribed" disclaimer on every single call.
+- **Varied Call Openings**: Your assistant's opening line on a call now varies, instead of sounding identical every time.
+- **Business Lines Use the Business's Time Zone**: A business phone line now runs on the business's own time zone, instead of whichever browser happened to complete onboarding.
+- **Clearer Confirmation Card for Sending a Saved Draft**: Confirming "send this draft" now shows the actual recipient and subject, instead of a generic message.
+- **Fixed Drafts-Folder Search & No More Duplicate Sends**: Searching your Drafts folder now actually works on Gmail instead of silently searching your whole mailbox, and saying "send it" after drafting sends that exact draft instead of a duplicate.
+- **Faster Recovery from Mail Rate-Limits**: A mail sync blocked by a provider's rate limit now retries within 30 seconds instead of up to 10 minutes, and your inbox is marked possibly out of date until caught up.
+- **More Efficient Mail Search Results**: Sender name and draft status are now included directly in mail search results.
+- **Standing Instructions Keep Their Context**: A standing instruction tied to a specific person now keeps the full occasion it was tied to, not just the general instruction.
+- **Person-Specific Rules Land on the Right Person**: A rule about one specific other person (e.g. "whenever Sarab calls, congratulate him") now attaches to that person's own record instead of yours; the same applies to email-based rules about a specific person.
+- **Vocabulary Form Polish**: Clearer field layout, expandable examples, required fields marked in red, and a word already granted to an agent no longer appears in the add menu.
+- **Clear Order Summaries**: Your own line now ends an order conversation with a clear summary — items, quantities, pickup or delivery details, who it's for, item count, and total — and asking "how much was it" afterward now returns the real total instead of "I don't have the total."
+- **Studio: Computed Value Builder**: The field editor has a new, optional "Computed value" section to build a formula visually (with a manual-formula option and live preview), and a kind now shows which fields it inherits from its parent.
+
+## Bug Fixes
+- Fixed: "lemon tart is out of stock," even when the item was named exactly, was still being discarded instead of recorded.
+- Fixed: a phrase that could refer to several items no longer cancels out the specific item you actually named.
+- Fixed: a recent security hardening change had broken microphone access for browser-based voice calls entirely; this is now resolved.
+- Fixed: a failed browser voice connection could leave a server resource open indefinitely instead of releasing it.
+- Fixed: right after your agent finished speaking, your very next turn could be wrongly treated as if you'd interrupted it.
+- **Major catalogue accuracy pass**: asking a question about your catalogue could accidentally change it; "we stopped selling cookies" would stop everything instead of asking which item you meant; your agent's replies could claim an action succeeded when it hadn't; background memory processing could silently undo an owner's own catalogue edits (re-listing stopped items, creating duplicates); new items now take the exact name given instead of a generic placeholder; a stop now requires clear confirmation before taking effect; and items added by direct upload are now correctly marked for sale.
+- Fixed: Gmail sometimes failed to clear a draft's status after sending it, causing it to reappear in later searches.
+- Fixed: the speech recognizer could read back its internal "names that may be spoken" list as if a caller had said it, especially over background noise; that mechanism has been removed. **Note:** this was the same mechanism behind the improved name recognition reported in October — this change may reduce that improvement until a replacement is in place.
+- Fixed: a link sent via text message for connecting an account could be broken.
+- Fixed: when a connected integration's access expired, there was no way to reconnect it directly; a reconnect link is now shown.
